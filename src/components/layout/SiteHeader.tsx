@@ -1,0 +1,256 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { HiMiniBars3 } from "react-icons/hi2";
+import { IoClose } from "react-icons/io5";
+import { motion } from "framer-motion";
+import { FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { navigation } from "@/data/navigation";
+import { office } from "@/data/contact";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
+
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://instagram.com/nessfuarcilik",
+    icon: FaInstagram,
+  },
+  { label: "LinkedIn", href: "https://www.linkedin.com", icon: FaLinkedin },
+];
+
+export function SiteHeader() {
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const { isScrolled } = useScrollPosition();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  const toggleMobile = () => setIsMobileOpen((prev) => !prev);
+  const closeMobile = () => setIsMobileOpen(false);
+
+  // Ana sayfada scroll yokken transparent, scroll yapınca normal
+  // Diğer sayfalarda her zaman normal
+  const headerBg =
+    isHomePage && !isScrolled
+      ? "bg-transparent"
+      : "bg-white/95 backdrop-blur-md";
+  const borderClass =
+    isHomePage && !isScrolled ? "border-transparent" : "border-black/5";
+  // TopBar her zaman background'a sahip (ana sayfada yarı şeffaf)
+  const topBarBg =
+    isHomePage && !isScrolled
+      ? "bg-slate-900/80 backdrop-blur-sm"
+      : "bg-slate-900";
+  const topBarText = isHomePage && !isScrolled ? "text-white/90" : "text-white";
+  // Nav linkleri için okunabilirlik artırıcı stiller
+  // Font-weight ve shadow her iki durumda da aynı olmalı (kaymayı önlemek için)
+  const navLinkStyle =
+    isHomePage && !isScrolled
+      ? "text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] hover:text-white/90"
+      : "text-slate-700 font-medium drop-shadow-[0_0_0_transparent] hover:text-slate-900";
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg} ${borderClass}`}
+      >
+        {/* TopBar */}
+        <div
+          className={`text-sm transition-all duration-300 ${topBarBg} border-b ${
+            isHomePage && !isScrolled
+              ? "border-transparent"
+              : "border-slate-800"
+          }`}
+        >
+          <div className="mx-auto max-w-6xl px-4 py-1.5 sm:px-6">
+            <div className="flex w-full items-center justify-between">
+              {/* İLETİŞİM */}
+              <div
+                className={`flex flex-col gap-[2px] ${topBarText} sm:flex-row sm:items-center sm:gap-3`}
+              >
+                <Link
+                  href={`tel:${office.phone}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {office.phone}
+                </Link>
+                <span className="hidden sm:inline opacity-40">•</span>
+                <Link
+                  href={`mailto:${office.email}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {office.email}
+                </Link>
+                <span className="hidden sm:inline opacity-40">•</span>
+                <p className="opacity-70">Yenimahalle / Ankara</p>
+              </div>
+
+              {/* SOSYAL MEDYA */}
+              <div className="flex items-center gap-2">
+                {socials.map(({ label, href, icon: Icon }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className={`rounded-full border p-1.5 transition ${
+                      isHomePage && !isScrolled
+                        ? "border-white/20 text-white/80 hover:text-white"
+                        : "border-white/20 text-white/80 hover:text-white"
+                    }`}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Header */}
+        <header className={`transition-all duration-300 ${headerBg}`}>
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+            <Link
+              href="/"
+              className="flex items-center"
+              aria-label="Ness Fuarcılık"
+            >
+              <Image
+                src="/images/logo.png"
+                alt="Ness Fuarcılık"
+                width={200}
+                height={120}
+                sizes="(max-width: 768px) 150px, 200px"
+                className="h-[60px] w-auto md:h-[64px]"
+                priority
+              />
+            </Link>
+            <nav className="hidden gap-6 text-sm md:flex">
+              {navigation.map((item) => (
+                <div key={item.href} className="group relative">
+                  <Link
+                    href={item.href}
+                    className={`transition ${navLinkStyle}`}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <div className="invisible absolute left-1/2 top-full z-10 w-max -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-hover:pt-5">
+                      <div className="min-w-[320px] rounded-2xl border border-slate-100 bg-white p-5 text-xs shadow-2xl">
+                        <ul className="grid gap-3">
+                          {item.children.map((child) => (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                className="text-sm font-semibold text-slate-700 transition hover:text-slate-900"
+                              >
+                                {child.label}
+                              </Link>
+                              {child.children && (
+                                <ul className="mt-2 grid gap-2 border-l border-slate-100 pl-3">
+                                  {child.children.map((grandChild) => (
+                                    <li key={grandChild.href}>
+                                      <Link
+                                        href={grandChild.href}
+                                        className="text-sm text-slate-500 transition hover:text-slate-900"
+                                      >
+                                        {grandChild.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+            <button
+              aria-label="Menüyü aç"
+              className={`inline-flex items-center justify-center rounded-full border p-3 md:hidden transition-colors ${
+                isHomePage && !isScrolled
+                  ? "border-white/20 text-white"
+                  : "border-slate-200 text-slate-700"
+              }`}
+              onClick={toggleMobile}
+            >
+              <HiMiniBars3 className="h-5 w-5" />
+            </button>
+          </div>
+        </header>
+      </nav>
+      {isMobileOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
+            onClick={closeMobile}
+          />
+          <nav className="fixed inset-y-0 right-0 z-50 w-72 max-w-full overflow-y-auto border-l border-slate-200 bg-white px-6 py-8 md:hidden">
+            <div className="mb-6 flex items-center justify-between">
+              <p className="text-lg font-semibold text-slate-900">Menü</p>
+              <button
+                aria-label="Menüyü kapat"
+                className="rounded-full border border-slate-200 p-2 text-slate-700"
+                onClick={closeMobile}
+              >
+                <IoClose className="h-5 w-5" />
+              </button>
+            </div>
+            <ul className="space-y-4 text-base font-medium text-slate-700">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block"
+                    onClick={closeMobile}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <ul className="mt-2 space-y-2 border-l border-slate-100 pl-4 text-sm text-slate-500">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className="block"
+                            onClick={closeMobile}
+                          >
+                            {child.label}
+                          </Link>
+                          {child.children && (
+                            <ul className="mt-2 space-y-1 border-l border-slate-100 pl-3 text-xs">
+                              {child.children.map((grandChild) => (
+                                <li key={grandChild.href}>
+                                  <Link
+                                    href={grandChild.href}
+                                    className="block"
+                                    onClick={closeMobile}
+                                  >
+                                    {grandChild.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </>
+      )}
+    </>
+  );
+}
