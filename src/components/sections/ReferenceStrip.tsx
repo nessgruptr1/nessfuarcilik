@@ -28,7 +28,7 @@ export function ReferenceStrip() {
           {marqueeList.map((ref, index) => (
             <div
               key={`${ref.id}-${index}`}
-              className="whitespace-nowrap rounded-lg border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm"
+              className="whitespace-nowrap rounded-lg border border-slate-200 bg-white px-6 py-3 text-base font-bold text-slate-900 shadow-sm"
             >
               {ref.name}
             </div>
