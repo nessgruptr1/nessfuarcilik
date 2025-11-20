@@ -75,8 +75,8 @@ export default function AboutPage() {
         {/* İstatistikler */}
         <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
-            { label: "100+", value: "Tamamlanan Proje" },
-            { label: "250+", value: "Mutlu Müşteri" },
+            { label: "120+", value: "Tamamlanan Proje" },
+            { label: "1000+", value: "Mutlu Müşteri" },
             { label: "12", value: "Takım Arkadaşı" },
             { label: "8", value: "Ödül" },
           ].map((stat, index) => (

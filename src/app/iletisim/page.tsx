@@ -2,131 +2,179 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { LuPhone, LuMail, LuMapPin, LuMessageCircle } from "react-icons/lu";
+import {
+  LuPhone,
+  LuMail,
+  LuMapPin,
+  LuMessageCircle,
+  LuSend,
+} from "react-icons/lu";
 import { office } from "@/data/contact";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/ui/PageHero";
 
 export default function ContactPage() {
+  const contactCards = [
+    {
+      title: "Telefon",
+      value: office.phone,
+      href: `tel:${office.phone}`,
+      icon: LuPhone,
+      accent: "bg-brand",
+      bg: "bg-brand-50",
+    },
+    {
+      title: "E-posta",
+      value: office.email,
+      href: `mailto:${office.email}`,
+      icon: LuMail,
+      accent: "bg-brand-600",
+      bg: "bg-brand-50",
+    },
+  ] as const;
+
+  const whatsappCard =
+    office.whatsapp &&
+    ({
+      title: "WhatsApp",
+      value: office.whatsapp,
+      href: `https://wa.me/${office.whatsapp.replace(/[^0-9]/g, "")}`,
+      icon: LuMessageCircle,
+      accent: "bg-green-500",
+      bg: "bg-green-50",
+    } as const);
+
+  const cardsToRender = whatsappCard
+    ? [...contactCards, whatsappCard]
+    : [...contactCards];
+
+  const supportItems = [
+    {
+      icon: LuSend,
+      title: "7/24 İletişim",
+      description:
+        "Bize günün her saati ulaşabilir, mümkün olan en kısa sürede size dönüş yapacağımızdan emin olabilirsiniz.",
+    },
+  ];
+
   return (
-    <div className="space-y-10 py-10">
-      <SectionHeading
-        overline="İletişim"
-        title="Ekibimizle hemen bağlantı kurun"
+    <>
+      <PageHero
+        title="İletişim"
         description="Projeleriniz için profesyonel çözümler sunuyoruz. Hemen iletişime geçin."
+        breadcrumbs={[{ label: "İletişim", href: "/iletisim" }]}
       />
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* Company Info Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
-        >
-          <div>
-            <h3 className="text-2xl font-bold text-slate-900">{office.companyName}</h3>
-          </div>
 
-          <div className="space-y-4">
-            {/* Address */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600">
-                <LuMapPin className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-                  Adres
-                </p>
-                <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                  {office.address}
-                  <br />
-                  {office.city} / {office.country}
-                </p>
-              </div>
-            </div>
-
-            {/* Phone */}
-            <Link
-              href={`tel:${office.phone}`}
-              className="flex items-center gap-4 rounded-xl bg-slate-50 p-4 transition-colors hover:bg-brand-50"
+      <div className="mx-auto max-w-6xl px-6 py-16 space-y-12">
+        {/* Contact Cards */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {cardsToRender.map((card, index) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand text-white">
-                <LuPhone className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-                  Telefon
-                </p>
-                <p className="mt-1 text-base font-semibold text-slate-900">
-                  {office.phone}
-                </p>
-              </div>
-            </Link>
-
-            {/* Email */}
-            <Link
-              href={`mailto:${office.email}`}
-              className="flex items-center gap-4 rounded-xl bg-slate-50 p-4 transition-colors hover:bg-brand-50"
-            >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white">
-                <LuMail className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-                  E-posta
-                </p>
-                <p className="mt-1 text-base font-semibold text-slate-900">
-                  {office.email}
-                </p>
-              </div>
-            </Link>
-
-            {/* WhatsApp */}
-            {office.whatsapp && (
               <Link
-                href={`https://wa.me/${office.whatsapp.replace(/[^0-9]/g, "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 rounded-xl bg-slate-50 p-4 transition-colors hover:bg-green-50"
+                href={card.href}
+                className="flex flex-col gap-4"
+                target={card.title === "WhatsApp" ? "_blank" : undefined}
+                rel={
+                  card.title === "WhatsApp" ? "noopener noreferrer" : undefined
+                }
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500 text-white">
-                  <LuMessageCircle className="h-5 w-5" />
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-2xl text-white ${card.accent}`}
+                >
+                  <card.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
-                    WhatsApp
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    {card.title}
                   </p>
-                  <p className="mt-1 text-base font-semibold text-slate-900">
-                    {office.whatsapp}
+                  <p className="mt-2 text-xl font-semibold text-slate-900">
+                    {card.value}
                   </p>
                 </div>
+                <div
+                  className={`rounded-2xl ${card.bg} p-4 text-sm text-slate-600`}
+                >
+                  Daha hızlı iletişim için {card.title.toLowerCase()} üzerinden
+                  bize ulaşabilirsiniz.
+                </div>
               </Link>
-            )}
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
 
-        {/* Map or Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 p-8 shadow-sm"
-        >
-          <div className="flex h-full flex-col items-center justify-center text-center">
-            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-brand text-white shadow-lg">
-              <LuMessageCircle className="h-10 w-10" />
-            </div>
-            <h3 className="mb-3 text-xl font-bold text-slate-900">
-              Bize Ulaşın
+        {/* Address & Support */}
+        <div className="grid gap-8 md:grid-cols-[2fr,1fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
+          >
+            <h3 className="text-2xl font-bold text-slate-900">
+              {office.companyName}
             </h3>
-            <p className="text-sm leading-relaxed text-slate-600">
-              Telefon, e-posta veya WhatsApp üzerinden bizimle iletişime geçebilirsiniz.
-              <br />
-              <br />
-              Çalışma saatlerimiz içinde en kısa sürede size dönüş yapacağız.
+            <div className="mt-6 space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-600">
+                  <LuMapPin className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    Adres
+                  </p>
+                  <p className="mt-2 text-base leading-relaxed text-slate-700">
+                    {office.address}
+                    <br />
+                    {office.city} / {office.country}
+                  </p>
+                </div>
+              </div>
+              {supportItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand">
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <p className="text-base leading-relaxed">
+                    <span className="font-semibold text-slate-900">
+                      {item.title}
+                    </span>{" "}
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-3xl border border-slate-200 bg-brand text-white p-8 shadow-lg"
+          >
+            <h3 className="text-xl font-bold">Birlikte çalışalım</h3>
+            <p className="mt-4 text-sm text-white/80">
+              Projeniz için keşif toplantısı planlayalım. Fuar hedeflerinizi
+              dinleyelim, bütçe ve teslim sürelerine uygun çözümler oluşturalım.
             </p>
-          </div>
-        </motion.div>
+            <div className="mt-6 space-y-2 text-sm text-white">
+              <p>• Fuar stand tasarımı ve uygulama</p>
+              <p>• İç mekan ve mağaza çözümleri</p>
+              <p>• Malzeme kiralama ve lojistik</p>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
