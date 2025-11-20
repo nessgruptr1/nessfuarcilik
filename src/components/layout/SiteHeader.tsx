@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaInstagram, FaFacebook } from "react-icons/fa6";
+import { LuChevronDown } from "react-icons/lu";
 import { navigation } from "@/data/navigation";
 import { office } from "@/data/contact";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
@@ -15,10 +16,14 @@ import { useScrollPosition } from "@/hooks/useScrollPosition";
 const socials = [
   {
     label: "Instagram",
-    href: "https://instagram.com/nessfuarcilik",
+    href: "https://www.instagram.com/nessgrup/",
     icon: FaInstagram,
   },
-  { label: "LinkedIn", href: "https://www.linkedin.com", icon: FaLinkedin },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/www.nessfuarcilik.com.tr/",
+    icon: FaFacebook,
+  },
 ];
 
 export function SiteHeader() {
@@ -46,10 +51,26 @@ export function SiteHeader() {
   const topBarText = isHomePage && !isScrolled ? "text-white/90" : "text-white";
   // Nav linkleri için okunabilirlik artırıcı stiller
   // Font-weight ve shadow her iki durumda da aynı olmalı (kaymayı önlemek için)
-  const navLinkStyle =
-    isHomePage && !isScrolled
-      ? "text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] hover:text-white/90"
-      : "text-slate-700 font-medium drop-shadow-[0_0_0_transparent] hover:text-slate-900";
+  const getIsActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const getDesktopLinkClasses = (isActive: boolean) => {
+    const activeColor = isHomePage && !isScrolled ? "text-brand-200" : "text-brand";
+    const defaultColor = isHomePage && !isScrolled ? "text-white" : "text-slate-700";
+    const hoverColor = isHomePage && !isScrolled ? "hover:text-white" : "hover:text-slate-900";
+    const baseShadow =
+      isHomePage && !isScrolled
+        ? "drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+        : "drop-shadow-[0_0_0_transparent]";
+    return `${isActive ? activeColor : defaultColor} ${hoverColor} ${baseShadow} relative inline-flex items-center gap-1 text-sm font-medium transition`;
+  };
+
+  const getMobileLinkClasses = (isActive: boolean) =>
+    `block ${isActive ? "text-brand" : "text-slate-700"}`;
 
   return (
     <>
@@ -131,14 +152,34 @@ export function SiteHeader() {
               />
             </Link>
             <nav className="hidden gap-6 text-sm md:flex">
-              {navigation.map((item) => (
-                <div key={item.href} className="group relative">
-                  <Link
-                    href={item.href}
-                    className={`transition ${navLinkStyle}`}
-                  >
-                    {item.label}
-                  </Link>
+              {navigation.map((item) => {
+                const isActive = getIsActive(item.href);
+                return (
+                  <div key={item.href} className="group relative">
+                    <Link
+                      href={item.href}
+                      className={getDesktopLinkClasses(isActive)}
+                    >
+                      <span>{item.label}</span>
+                      {item.children && (
+                        <LuChevronDown
+                          className={`h-3.5 w-3.5 transition ${
+                            isHomePage && !isScrolled
+                              ? isActive
+                                ? "text-brand-200"
+                                : "text-white/80"
+                              : isActive
+                                ? "text-brand"
+                                : "text-slate-500"
+                          }`}
+                        />
+                      )}
+                      <span
+                        className={`pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left rounded-full bg-current transition-transform duration-300 ${
+                          isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                        }`}
+                      />
+                    </Link>
                   {item.children && (
                     <div className="invisible absolute left-1/2 top-full z-10 w-max -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-hover:pt-5">
                       <div className="min-w-[320px] rounded-2xl border border-slate-100 bg-white p-5 text-xs shadow-2xl">
@@ -171,8 +212,9 @@ export function SiteHeader() {
                       </div>
                     </div>
                   )}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </nav>
             <button
               aria-label="Menüyü aç"
@@ -210,7 +252,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block"
+                    className={getMobileLinkClasses(getIsActive(item.href))}
                     onClick={closeMobile}
                   >
                     {item.label}

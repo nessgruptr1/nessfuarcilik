@@ -1,17 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LuPhone, LuMail, LuMapPin } from "react-icons/lu";
-import { FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaInstagram, FaFacebook } from "react-icons/fa6";
 import { navigation } from "@/data/navigation";
 import { office } from "@/data/contact";
 
 const socials = [
   {
     label: "Instagram",
-    href: "https://instagram.com/nessfuarcilik",
+    href: "https://www.instagram.com/nessgrup/",
     icon: FaInstagram,
   },
-  { label: "LinkedIn", href: "https://www.linkedin.com", icon: FaLinkedin },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/www.nessfuarcilik.com.tr/",
+    icon: FaFacebook,
+  },
 ];
 
 export function SiteFooter() {
