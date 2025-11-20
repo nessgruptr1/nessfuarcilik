@@ -54,18 +54,24 @@ export default function ServicesOverviewPage() {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-16 space-y-12">
-        <div className="rounded-[32px] bg-linear-to-br from-brand-50 via-white to-brand-50/60 p-6 md:p-10 shadow-inner shadow-brand-100/60">
-          <SectionHeading
-            overline="Uzmanlıklarımız"
-            title="Her ölçek için ölçeklenebilir çözümler"
-            description="Fuarda, showroomda veya mağaza içinde markanızı aynı kalite standardıyla temsil ediyoruz."
-          />
+        <div className="rounded-[32px] bg-linear-to-br from-brand to-brand-700 p-6 md:p-10 shadow-xl shadow-brand-900/30">
+          <div className="space-y-3 mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+              Uzmanlıklarımız
+            </p>
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">
+              Her ölçek için ölçeklenebilir çözümler
+            </h2>
+            <p className="text-base text-white/90">
+              Fuarda, showroomda veya mağaza içinde markanızı aynı kalite standardıyla temsil ediyoruz.
+            </p>
+          </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {serviceHighlights.map((highlight) => (
               <div
                 key={highlight.title}
-                className="rounded-3xl border border-white/60 bg-white/80 p-6 text-center shadow-lg shadow-brand-100/40 backdrop-blur"
+                className="rounded-3xl border border-white/80 bg-white/95 p-6 text-center shadow-xl shadow-brand-300/30 backdrop-blur"
               >
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-brand/40">
                   <highlight.icon className="h-6 w-6" />

@@ -125,8 +125,8 @@ export function SiteFooter() {
       <div className="border-t border-slate-800 bg-slate-900 py-6">
         <div className="mx-auto max-w-6xl px-6">
           <p className="text-center text-xs text-slate-400">
-            © {new Date().getFullYear()} Ness Fuarcılık | Tasarım & uygulama
-            çözümleri
+            © {new Date().getFullYear()} Ness Fuarcılık | Fuar Stand Tasarım,
+            Uygulama ve Danışmanlık Hizmetleri
           </p>
         </div>
       </div>

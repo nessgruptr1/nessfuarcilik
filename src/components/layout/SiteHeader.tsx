@@ -59,14 +59,19 @@ export function SiteHeader() {
   };
 
   const getDesktopLinkClasses = (isActive: boolean) => {
-    const activeColor = isHomePage && !isScrolled ? "text-brand-200" : "text-brand";
-    const defaultColor = isHomePage && !isScrolled ? "text-white" : "text-slate-700";
-    const hoverColor = isHomePage && !isScrolled ? "hover:text-white" : "hover:text-slate-900";
+    const activeColor =
+      isHomePage && !isScrolled ? "text-brand-200" : "text-brand";
+    const defaultColor =
+      isHomePage && !isScrolled ? "text-white" : "text-slate-700";
+    const hoverColor =
+      isHomePage && !isScrolled ? "hover:text-white" : "hover:text-slate-900";
     const baseShadow =
       isHomePage && !isScrolled
         ? "drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
         : "drop-shadow-[0_0_0_transparent]";
-    return `${isActive ? activeColor : defaultColor} ${hoverColor} ${baseShadow} relative inline-flex items-center gap-1 text-sm font-medium transition`;
+    return `${
+      isActive ? activeColor : defaultColor
+    } ${hoverColor} ${baseShadow} relative inline-flex items-center gap-1 text-sm font-medium transition`;
   };
 
   const getMobileLinkClasses = (isActive: boolean) =>
@@ -135,7 +140,7 @@ export function SiteHeader() {
 
         {/* Main Header */}
         <header className={`transition-all duration-300 ${headerBg}`}>
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
             <Link
               href="/"
               className="flex items-center"
@@ -144,10 +149,10 @@ export function SiteHeader() {
               <Image
                 src="/images/logo.png"
                 alt="Ness Fuarcılık"
-                width={200}
-                height={120}
-                sizes="(max-width: 768px) 150px, 200px"
-                className="h-[60px] w-auto md:h-[64px]"
+                width={220}
+                height={132}
+                sizes="(max-width: 768px) 170px, 220px"
+                className="h-[70px] w-auto md:h-[76px]"
                 priority
               />
             </Link>
@@ -169,49 +174,51 @@ export function SiteHeader() {
                                 ? "text-brand-200"
                                 : "text-white/80"
                               : isActive
-                                ? "text-brand"
-                                : "text-slate-500"
+                              ? "text-brand"
+                              : "text-slate-500"
                           }`}
                         />
                       )}
                       <span
                         className={`pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left rounded-full bg-current transition-transform duration-300 ${
-                          isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                          isActive
+                            ? "scale-x-100"
+                            : "scale-x-0 group-hover:scale-x-100"
                         }`}
                       />
                     </Link>
-                  {item.children && (
-                    <div className="invisible absolute left-1/2 top-full z-10 w-max -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-hover:pt-5">
-                      <div className="min-w-[320px] rounded-2xl border border-slate-100 bg-white p-5 text-xs shadow-2xl">
-                        <ul className="grid gap-3">
-                          {item.children.map((child) => (
-                            <li key={child.href}>
-                              <Link
-                                href={child.href}
-                                className="text-sm font-semibold text-slate-700 transition hover:text-slate-900"
-                              >
-                                {child.label}
-                              </Link>
-                              {child.children && (
-                                <ul className="mt-2 grid gap-2 border-l border-slate-100 pl-3">
-                                  {child.children.map((grandChild) => (
-                                    <li key={grandChild.href}>
-                                      <Link
-                                        href={grandChild.href}
-                                        className="text-sm text-slate-500 transition hover:text-slate-900"
-                                      >
-                                        {grandChild.label}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
+                    {item.children && (
+                      <div className="invisible absolute left-1/2 top-full z-10 w-max -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-hover:pt-5">
+                        <div className="min-w-[320px] rounded-2xl border border-slate-100 bg-white p-5 text-xs shadow-2xl">
+                          <ul className="grid gap-3">
+                            {item.children.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  className="text-sm font-semibold text-slate-700 transition hover:text-slate-900"
+                                >
+                                  {child.label}
+                                </Link>
+                                {child.children && (
+                                  <ul className="mt-2 grid gap-2 border-l border-slate-100 pl-3">
+                                    {child.children.map((grandChild) => (
+                                      <li key={grandChild.href}>
+                                        <Link
+                                          href={grandChild.href}
+                                          className="text-sm text-slate-500 transition hover:text-slate-900"
+                                        >
+                                          {grandChild.label}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                   </div>
                 );
               })}
