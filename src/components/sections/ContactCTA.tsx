@@ -7,7 +7,7 @@ import { office } from "@/data/contact";
 
 export function ContactCTA() {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 md:p-12 text-white shadow-2xl">
+    <section className="relative overflow-hidden rounded-md border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 md:p-12 text-white shadow-2xl">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-brand blur-3xl" />
@@ -49,9 +49,9 @@ export function ContactCTA() {
             {/* Phone */}
             <Link
               href={`tel:${office.phone}`}
-              className="group flex items-center gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
+              className="group flex items-center gap-4 rounded bg-white/10 p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand text-white">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-brand text-white">
                 <LuPhone className="h-6 w-6" />
               </div>
               <div className="flex-1">
@@ -66,9 +66,9 @@ export function ContactCTA() {
             {/* Email */}
             <Link
               href={`mailto:${office.email}`}
-              className="group flex items-center gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
+              className="group flex items-center gap-4 rounded bg-white/10 p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-brand-600 text-white">
                 <LuMail className="h-6 w-6" />
               </div>
               <div className="flex-1">
@@ -81,8 +81,8 @@ export function ContactCTA() {
             </Link>
 
             {/* Address */}
-            <div className="flex items-start gap-4 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-700 text-white">
+            <div className="flex items-start gap-4 rounded bg-white/10 p-4 backdrop-blur-sm">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-slate-700 text-white">
                 <LuMapPin className="h-6 w-6" />
               </div>
               <div className="flex-1">

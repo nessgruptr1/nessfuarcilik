@@ -43,7 +43,7 @@ export default function ApplicationsPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 pt-40 pb-16 space-y-10 md:pt-48">
-      <div className="relative overflow-hidden rounded-[32px] bg-slate-900 text-white shadow-2xl shadow-slate-900/20">
+      <div className="relative overflow-hidden rounded-lg bg-slate-900 text-white shadow-2xl shadow-slate-900/20">
         {applicationSlides.map((slide, index) => (
           <div
             key={slide.image}
@@ -91,7 +91,7 @@ export default function ApplicationsPage() {
           <button
             key={slide.image}
             onClick={() => setSelectedImage(index)}
-            className="group relative aspect-4/3 overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            className="group relative aspect-4/3 overflow-hidden rounded-md border border-slate-200 bg-slate-100 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
           >
             <Image
               src={slide.image}
@@ -126,7 +126,7 @@ export default function ApplicationsPage() {
               alt={applicationSlides[selectedImage].alt}
               width={1400}
               height={1050}
-              className="max-h-[90vh] rounded-3xl object-contain"
+              className="max-h-[90vh] rounded-md object-contain"
             />
           </div>
         </div>

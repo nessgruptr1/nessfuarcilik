@@ -59,8 +59,7 @@ export function SiteHeader() {
   };
 
   const getDesktopLinkClasses = (isActive: boolean) => {
-    const activeColor =
-      isHomePage && !isScrolled ? "text-brand-200" : "text-brand";
+    const activeColor = "text-brand"; // Tüm sayfalarda aynı aktif renk
     const defaultColor =
       isHomePage && !isScrolled ? "text-white" : "text-slate-700";
     const hoverColor =
@@ -169,12 +168,10 @@ export function SiteHeader() {
                       {item.children && (
                         <LuChevronDown
                           className={`h-3.5 w-3.5 transition ${
-                            isHomePage && !isScrolled
-                              ? isActive
-                                ? "text-brand-200"
-                                : "text-white/80"
-                              : isActive
+                            isActive
                               ? "text-brand"
+                              : isHomePage && !isScrolled
+                              ? "text-white/80"
                               : "text-slate-500"
                           }`}
                         />
@@ -189,7 +186,7 @@ export function SiteHeader() {
                     </Link>
                     {item.children && (
                       <div className="invisible absolute left-1/2 top-full z-10 w-max -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-hover:pt-5">
-                        <div className="min-w-[320px] rounded-2xl border border-slate-100 bg-white p-5 text-xs shadow-2xl">
+                        <div className="min-w-[320px] rounded border border-slate-100 bg-white p-5 text-xs shadow-2xl">
                           <ul className="grid gap-3">
                             {item.children.map((child) => (
                               <li key={child.href}>

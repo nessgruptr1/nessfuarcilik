@@ -243,7 +243,7 @@ export default async function StandDetailPage({
 
   return (
     <div className="mx-auto max-w-5xl px-6 pt-36 pb-16 space-y-12 md:pt-44">
-      <div className="rounded-[32px] bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-2xl shadow-slate-900/30">
+      <div className="rounded-lg bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-2xl shadow-slate-900/30">
         <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
           Stand Tipi
         </p>
@@ -261,7 +261,7 @@ export default async function StandDetailPage({
           {detail.sections.map((section) => (
             <article
               key={section.heading}
-              className="rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur"
+              className="rounded-md border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur"
             >
               <h3 className="text-2xl font-semibold text-slate-900">
                 {section.heading}
@@ -284,7 +284,7 @@ export default async function StandDetailPage({
       ) : (
         <>
           {stand.advantages && (
-            <div className="rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
+            <div className="rounded-md border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
               <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
                 Avantajlar
               </h3>
@@ -296,7 +296,7 @@ export default async function StandDetailPage({
             </div>
           )}
           {stand.suitableFor && (
-            <div className="rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
+            <div className="rounded-md border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
               <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
                 Kimler için uygun?
               </h3>
@@ -316,7 +316,7 @@ export default async function StandDetailPage({
       )}
 
       {related && related.length > 0 && (
-        <div className="rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
+        <div className="rounded-md border border-slate-200 bg-white/80 p-8 shadow-lg shadow-slate-900/5 backdrop-blur">
           <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
             Alternatifler
           </h3>

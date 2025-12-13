@@ -191,7 +191,7 @@ export function Design3DShowcase() {
                   >
                     <button
                       onClick={() => openLightbox(index)}
-                      className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+                      className="group relative aspect-[4/3] w-full overflow-hidden rounded bg-slate-100 transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
                     >
                       <Image
                         src={image.src}

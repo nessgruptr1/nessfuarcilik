@@ -26,7 +26,7 @@ export default function DesignsPage() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 pt-40 pb-16 space-y-10 md:pt-48">
-      <div className="relative rounded-[32px] bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 p-10 text-white shadow-2xl shadow-slate-900/20 overflow-hidden">
+      <div className="relative rounded-lg bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 p-10 text-white shadow-2xl shadow-slate-900/20 overflow-hidden">
         {/* SVG Animation - Right Side */}
         <div className="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5 opacity-30 pointer-events-none">
           <StandDrawingAnimation className="h-full w-full" duration={18} />
@@ -63,7 +63,7 @@ export default function DesignsPage() {
           <button
             key={image.src}
             onClick={() => setSelectedImage(index)}
-            className="group relative aspect-4/3 w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            className="group relative aspect-4/3 w-full overflow-hidden rounded-md border border-slate-200 bg-slate-100 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
           >
             <Image
               src={image.src}
@@ -103,7 +103,7 @@ export default function DesignsPage() {
               alt={designShowcaseImages[selectedImage].alt}
               width={1400}
               height={1050}
-              className="max-h-[90vh] rounded-3xl object-contain"
+              className="max-h-[90vh] rounded-md object-contain"
             />
             <p className="mt-4 text-center text-white text-sm">
               {designShowcaseImages[selectedImage].alt}

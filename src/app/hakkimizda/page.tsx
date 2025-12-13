@@ -86,7 +86,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:shadow-lg"
+              className="rounded-md border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:shadow-lg"
             >
               <p className="text-4xl font-bold text-brand">{stat.label}</p>
               <p className="mt-2 text-base font-medium text-slate-600">
@@ -105,7 +105,7 @@ export default function AboutPage() {
           className="mb-16 grid gap-8 md:grid-cols-2 md:items-center"
         >
           {/* Sol: Fotoğraf */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-slate-100">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-slate-100">
             <Image
               src="/images/hakkimizda/neslihan-fidan.jpg"
               alt="Ness Fuarcılık"
@@ -142,10 +142,10 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 md:p-12"
+          className="mb-16 rounded-md border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 md:p-12"
         >
           <div className="mb-6 flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand text-white shadow-lg">
+            <div className="flex h-14 w-14 items-center justify-center rounded bg-brand text-white shadow-lg">
               <mission.icon className="h-7 w-7" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900">
@@ -171,10 +171,10 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16 rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white md:p-12"
+          className="mb-16 rounded-md border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white md:p-12"
         >
           <div className="mb-6 flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm text-white shadow-lg">
+            <div className="flex h-14 w-14 items-center justify-center rounded bg-white/20 backdrop-blur-sm text-white shadow-lg">
               <vision.icon className="h-7 w-7" />
             </div>
             <h2 className="text-3xl font-bold">{vision.title}</h2>
@@ -206,10 +206,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all hover:-translate-y-1 hover:shadow-lg"
+              className="rounded border border-slate-200 bg-white p-6 text-center transition-all hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="mb-4 flex justify-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand">
                   <value.icon className="h-6 w-6" />
                 </div>
               </div>

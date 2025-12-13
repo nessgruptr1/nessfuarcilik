@@ -10,7 +10,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
 
   return (
     <section className="mx-auto max-w-6xl px-6 pt-40 pb-16 space-y-10 md:pt-48">
-      <div className="relative overflow-hidden rounded-[32px] bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white shadow-2xl shadow-slate-900/20">
+      <div className="relative overflow-hidden rounded-lg bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white shadow-2xl shadow-slate-900/20">
         {heroHasImage && service.heroImage && (
           <>
             <Image
@@ -45,7 +45,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             return (
               <article
                 key={`${block.title ?? "text"}-${index}`}
-                className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-900/5 backdrop-blur"
+                className="rounded-md border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-900/5 backdrop-blur"
               >
                 {block.title && (
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand">
@@ -62,7 +62,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             return (
               <article
                 key={`${block.title ?? "list"}-${index}`}
-                className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-900/5 backdrop-blur"
+                className="rounded-md border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-900/5 backdrop-blur"
               >
                 {block.title && (
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand">
@@ -81,7 +81,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
             return (
               <article
                 key={`${block.title ?? "images"}-${index}`}
-                className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-900/5 backdrop-blur"
+                className="rounded-md border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-900/5 backdrop-blur"
               >
                 {block.title && (
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand">
@@ -92,7 +92,7 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
                   {block.images.map((image) => (
                     <div
                       key={image.url}
-                      className="aspect-video rounded-2xl bg-slate-100"
+                      className="aspect-video rounded bg-slate-100"
                     />
                   ))}
                 </div>

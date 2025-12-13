@@ -7,7 +7,7 @@ const marqueeList = [...clientReferences, ...clientReferences];
 
 export function ReferenceStrip() {
   return (
-    <section className="rounded-3xl border-2 border-slate-800 bg-white/90 px-6 py-8 shadow-sm backdrop-blur">
+    <section className="rounded-md border-2 border-slate-800 bg-white/90 px-6 py-8 shadow-sm backdrop-blur">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">

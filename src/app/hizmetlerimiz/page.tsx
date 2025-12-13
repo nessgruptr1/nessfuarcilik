@@ -54,7 +54,7 @@ export default function ServicesOverviewPage() {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-16 space-y-12">
-        <div className="rounded-[32px] bg-linear-to-br from-brand to-brand-700 p-6 md:p-10 shadow-xl shadow-brand-900/30">
+        <div className="rounded-lg bg-linear-to-br from-brand to-brand-700 p-6 md:p-10 shadow-xl shadow-brand-900/30">
           <div className="space-y-3 mb-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
               Uzmanlıklarımız
@@ -71,9 +71,9 @@ export default function ServicesOverviewPage() {
             {serviceHighlights.map((highlight) => (
               <div
                 key={highlight.title}
-                className="rounded-3xl border border-white/80 bg-white/95 p-6 text-center shadow-xl shadow-brand-300/30 backdrop-blur"
+                className="rounded-md border border-white/80 bg-white/95 p-6 text-center shadow-xl shadow-brand-300/30 backdrop-blur"
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-brand/40">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-brand text-white shadow-lg shadow-brand/40">
                   <highlight.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900">
@@ -107,10 +107,10 @@ export default function ServicesOverviewPage() {
               >
                 <Link
                   href={`/hizmetlerimiz/${service.slug}`}
-                  className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg"
+                  className="flex h-full flex-col rounded-md border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded bg-brand text-white">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div>
@@ -154,7 +154,7 @@ export default function ServicesOverviewPage() {
           })}
         </div>
 
-        <div className="rounded-3xl bg-linear-to-br from-brand to-brand-700 p-8 text-white">
+        <div className="rounded-md bg-linear-to-br from-brand to-brand-700 p-8 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">

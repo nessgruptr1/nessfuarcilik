@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { LuChevronRight } from "react-icons/lu";
 import { companyInfo } from "@/data/site";
 
+// Slider'lar şimdilik yoruma alındı
+/*
 const slides = [
   {
     image: "/images/home/hero1.jpg",
@@ -85,47 +85,67 @@ const slides = [
       "Marka kimliğinizi yansıtan, tutarlı ve etkileyici görsel deneyimler oluşturuyoruz.",
   },
 ];
+*/
 
 export function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
   // Bir sonraki görseli önceden yükle
-  const nextIndex = useMemo(
-    () => (currentSlide + 1) % slides.length,
-    [currentSlide]
-  );
+  // const nextIndex = useMemo(
+  //   () => (currentSlide + 1) % slides.length,
+  //   [currentSlide]
+  // );
 
   // Otomatik geçiş (5 saniye)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  //   }, 5000);
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   // Bir sonraki görseli preload et
-  useEffect(() => {
-    const img = new window.Image();
-    img.src = slides[nextIndex].image;
-  }, [nextIndex]);
+  // useEffect(() => {
+  //   const img = new window.Image();
+  //   img.src = slides[nextIndex].image;
+  // }, [nextIndex]);
 
-  const goToSlide = (index: number) => setCurrentSlide(index);
+  // const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
     <section className="relative left-1/2 flex min-h-screen w-screen -translate-x-1/2 items-center justify-center overflow-hidden">
-      {slides.map((slide, index) => {
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
+          aria-label="Ness Fuarcılık Hero Video"
+        >
+          <source
+            src="/images/home/hero-video-optimized.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/40 to-black/50" />
+      </div>
+
+      {/* Slider'lar şimdilik yoruma alındı */}
+      {/* {slides.map((slide, index) => {
         const isActive = index === currentSlide;
 
         return (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
+            className={`absolute inset-0 z-10 transition-opacity duration-1000 ${
               isActive ? "opacity-100" : "opacity-0"
             }`}
             aria-hidden={!isActive}
           >
-            {/* Background Image */}
             <Image
               src={slide.image}
               alt={`Ness Fuarcılık - ${slide.title} ${slide.subtitle}`}
@@ -136,47 +156,44 @@ export function Hero() {
               fetchPriority={index === 0 ? "high" : "auto"}
               quality={75}
             />
-
-            {/* Dark overlay for better text readability */}
             <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/30 to-black/40" />
           </div>
         );
-      })}
+      })} */}
 
-      {/* Content - Always visible, on top of all slides */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 py-8 md:py-0 text-center">
-        <div
-          className="transition-all duration-700"
-          key={currentSlide} // Re-render için key
-        >
+      {/* Content - Always visible, on top of video */}
+      <div className="relative z-20 mx-auto max-w-5xl px-4 py-8 md:py-0 text-center">
+        <div className="transition-all duration-700">
           <h1 className="mt-12 md:mt-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-            {slides[currentSlide].title}
+            Türkiye ve Dünya Genelinde
             <span className="block mt-2 text-slate-200 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-              {slides[currentSlide].subtitle}
+              Profesyonel Fuar Çözümleri
             </span>
           </h1>
           <p className="mt-6 text-base sm:text-lg md:text-xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] max-w-3xl mx-auto">
-            {slides[currentSlide].description}
+            Ness Fuarcılık olarak 14 ülkede tamamlanan 200+ proje ile yurt içi
+            ve yurt dışında markanızı en iyi şekilde temsil ediyoruz. Stand
+            tasarımından uygulamaya, global deneyimimizle yanınızdayız.
           </p>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href={companyInfo.cta.primary.href}
-            className="inline-flex items-center rounded-xl bg-slate-900 px-6 py-3 text-base font-bold text-white shadow-2xl transition-all hover:bg-slate-800 hover:scale-105 hover:shadow-slate-900/50 md:px-8 md:py-4 md:text-lg"
+            className="inline-flex items-center rounded-md bg-slate-900 px-6 py-3 text-base font-bold text-white shadow-2xl transition-all hover:bg-slate-800 hover:scale-105 hover:shadow-slate-900/50 md:px-8 md:py-4 md:text-lg"
           >
             {companyInfo.cta.primary.label} <LuChevronRight className="ml-2" />
           </Link>
           <Link
             href={companyInfo.cta.secondary.href}
-            className="inline-flex items-center rounded-xl border-2 border-white bg-white/10 px-6 py-3 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white hover:text-slate-900 hover:scale-105 hover:shadow-xl md:px-8 md:py-4 md:text-lg"
+            className="inline-flex items-center rounded-md border-2 border-white bg-white/10 px-6 py-3 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white hover:text-slate-900 hover:scale-105 hover:shadow-xl md:px-8 md:py-4 md:text-lg"
           >
             {companyInfo.cta.secondary.label}
           </Link>
         </div>
       </div>
 
-      {/* Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      {/* Navigation Dots - Şimdilik yoruma alındı */}
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -190,7 +207,7 @@ export function Hero() {
             aria-current={index === currentSlide}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

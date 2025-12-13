@@ -76,10 +76,10 @@ export default function StandDesignPage() {
               >
                 <Link
                   href={`/hizmetlerimiz/stand-tasarimi/${type.slug}`}
-                  className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg"
+                  className="flex h-full flex-col rounded border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-md bg-brand text-white">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -113,9 +113,9 @@ export default function StandDesignPage() {
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm"
+              className="rounded-md border border-slate-200 bg-white p-6 text-center shadow-sm"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand">
                 <item.icon className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900">
@@ -126,7 +126,7 @@ export default function StandDesignPage() {
           ))}
         </div>
 
-        <div className="rounded-3xl bg-linear-to-br from-brand to-brand-700 p-8 text-white">
+        <div className="rounded-md bg-linear-to-br from-brand to-brand-700 p-8 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">

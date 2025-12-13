@@ -42,10 +42,10 @@ export function ServiceGrid() {
             >
               <Link
                 href={`/hizmetlerimiz/${service.slug}`}
-                className="group relative block h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand-300 hover:shadow-xl"
+                className="group relative block h-full rounded-md border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand-300 hover:shadow-xl"
               >
                 {/* Icon */}
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand text-white shadow-lg transition-transform group-hover:scale-110">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded bg-brand text-white shadow-lg transition-transform group-hover:scale-110">
                   <Icon className="h-7 w-7" />
                 </div>
 
@@ -96,7 +96,7 @@ export function ServiceGrid() {
                 </div>
 
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-brand-50/0 via-brand-50/0 to-brand-50/0 opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 -z-10 rounded-md bg-gradient-to-br from-brand-50/0 via-brand-50/0 to-brand-50/0 opacity-0 transition-opacity group-hover:opacity-100" />
               </Link>
             </motion.div>
           );

@@ -25,9 +25,9 @@ export function PortfolioHighlights() {
             href={`/${item.type === "design" ? "tasarimlar" : "uygulamalar"}/${
               item.slug
             }`}
-            className="group rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1"
+            className="group rounded-md border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1"
           >
-            <div className="relative mb-4 aspect-video overflow-hidden rounded-2xl bg-slate-100">
+            <div className="relative mb-4 aspect-video overflow-hidden rounded bg-slate-100">
               <Image
                 src={item.coverImage.url}
                 alt={item.coverImage.alt}

@@ -22,7 +22,7 @@ export default function ReferencesPage() {
           {clientReferences.map((reference) => (
             <div
               key={reference.id}
-              className="rounded-3xl border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-1 hover:border-brand hover:shadow-lg"
+              className="rounded-md border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-1 hover:border-brand hover:shadow-lg"
             >
               {reference.name}
             </div>

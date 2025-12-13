@@ -91,7 +91,7 @@ export default function PressPage() {
             item.type === "video" ? (
               <article
                 key={item.title}
-                className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+                className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm"
               >
                 <div className="relative w-full pt-[56.25%]">
                   <iframe
@@ -123,7 +123,7 @@ export default function PressPage() {
             ) : (
               <article
                 key={item.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-md border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                   {item.source} · {item.date}
@@ -141,7 +141,7 @@ export default function PressPage() {
                         key={src}
                         type="button"
                         onClick={() => setLightboxImage(src)}
-                        className="group relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-slate-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand/40"
+                        className="group relative aspect-4/3 w-full overflow-hidden rounded border border-slate-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand/40"
                       >
                         <Image
                           src={src}
@@ -184,7 +184,7 @@ export default function PressPage() {
               alt="Haber görseli"
               width={1600}
               height={900}
-              className="h-auto w-full max-h-[80vh] rounded-2xl object-contain"
+              className="h-auto w-full max-h-[80vh] rounded object-contain"
             />
             <button
               type="button"

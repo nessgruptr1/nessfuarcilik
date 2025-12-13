@@ -74,7 +74,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="rounded-md border border-slate-200 bg-white p-6 shadow-sm"
             >
               <Link
                 href={card.href}
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 }
               >
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-2xl text-white ${card.accent}`}
+                  className={`flex h-12 w-12 items-center justify-center rounded text-white ${card.accent}`}
                 >
                   <card.icon className="h-6 w-6" />
                 </div>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <div
-                  className={`rounded-2xl ${card.bg} p-4 text-sm text-slate-600`}
+                  className={`rounded ${card.bg} p-4 text-sm text-slate-600`}
                 >
                   Daha hızlı iletişim için {card.title.toLowerCase()} üzerinden
                   bize ulaşabilirsiniz.
@@ -115,14 +115,14 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
+            className="rounded-md border border-slate-200 bg-white p-8 shadow-sm"
           >
             <h3 className="text-2xl font-bold text-slate-900">
               {office.companyName}
             </h3>
             <div className="mt-6 space-y-4">
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-600">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-slate-100 text-slate-600">
                   <LuMapPin className="h-6 w-6" />
                 </div>
                 <div>
@@ -139,9 +139,9 @@ export default function ContactPage() {
               {supportItems.map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600"
+                  className="flex items-center gap-3 rounded bg-slate-50 p-4 text-sm text-slate-600"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-brand-50 text-brand">
                     <item.icon className="h-5 w-5" />
                   </div>
                   <p className="text-base leading-relaxed">
@@ -160,7 +160,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-3xl border border-slate-200 bg-brand text-white p-8 shadow-lg"
+            className="rounded-md border border-slate-200 bg-brand text-white p-8 shadow-lg"
           >
             <h3 className="text-xl font-bold">Birlikte çalışalım</h3>
             <p className="mt-4 text-sm text-white/80">

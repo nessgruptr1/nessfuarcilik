@@ -38,7 +38,7 @@ export function StandShowcase() {
             >
               <Link
                 href={`/hizmetlerimiz/stand-tasarimi/${stand.slug}`}
-                className="group relative flex h-full w-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand-300 hover:shadow-xl"
+                className="group relative flex h-full w-full flex-col rounded border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand-300 hover:shadow-xl"
               >
                 {/* Icon */}
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-slate-600 to-slate-800 text-white shadow-md transition-transform group-hover:scale-110">
@@ -67,7 +67,7 @@ export function StandShowcase() {
                 </div>
 
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-slate-50/0 via-brand-50/0 to-slate-50/0 opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 -z-10 rounded bg-gradient-to-br from-slate-50/0 via-brand-50/0 to-slate-50/0 opacity-0 transition-opacity group-hover:opacity-100" />
               </Link>
             </motion.div>
           );
