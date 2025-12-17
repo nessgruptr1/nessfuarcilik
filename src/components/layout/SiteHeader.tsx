@@ -58,8 +58,12 @@ export function SiteHeader() {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  const getDesktopLinkClasses = (isActive: boolean) => {
-    const activeColor = "text-brand"; // Tüm sayfalarda aynı aktif renk
+  const getDesktopLinkClasses = (href: string, isActive: boolean) => {
+    const isHomeLink = href === "/";
+    // Ana sayfada, scroll yokken "Anasayfa" linki aktifken beyaz kalsın,
+    // diğer tüm sayfalarda aktif linkler logo rengi (brand) ile görünsün.
+    const activeColor =
+      isHomePage && !isScrolled && isHomeLink ? "text-white" : "text-brand";
     const defaultColor =
       isHomePage && !isScrolled ? "text-white" : "text-slate-700";
     const hoverColor =
@@ -68,9 +72,7 @@ export function SiteHeader() {
       isHomePage && !isScrolled
         ? "drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
         : "drop-shadow-[0_0_0_transparent]";
-    return `${
-      isActive ? activeColor : defaultColor
-    } ${hoverColor} ${baseShadow} relative inline-flex items-center gap-1 text-sm font-medium transition`;
+    return `${isActive ? activeColor : defaultColor} ${hoverColor} ${baseShadow} relative inline-flex items-center gap-1 text-sm font-medium transition`;
   };
 
   const getMobileLinkClasses = (isActive: boolean) =>
@@ -83,10 +85,12 @@ export function SiteHeader() {
       >
         {/* TopBar */}
         <div
-          className={`text-sm transition-all duration-300 ${topBarBg} border-b ${
-            isHomePage && !isScrolled
-              ? "border-transparent"
-              : "border-slate-800"
+          className={`text-sm transition-all duration-300 transform overflow-hidden ${
+            isScrolled 
+              ? "-translate-y-full opacity-0 max-h-0 py-0" 
+              : "translate-y-0 opacity-100 max-h-20"
+          } ${topBarBg} border-b ${
+            isHomePage && !isScrolled ? "border-transparent" : "border-slate-800"
           }`}
         >
           <div className="mx-auto max-w-6xl px-4 py-1.5 sm:px-6">
@@ -156,20 +160,24 @@ export function SiteHeader() {
               />
             </Link>
             <nav className="hidden gap-6 text-sm md:flex">
-              {navigation.map((item) => {
-                const isActive = getIsActive(item.href);
-                return (
+              {navigation
+                .filter((item) => !(isHomePage && item.href === "/"))
+                .map((item) => {
+                  const isActive = getIsActive(item.href);
+                  return (
                   <div key={item.href} className="group relative">
                     <Link
                       href={item.href}
-                      className={getDesktopLinkClasses(isActive)}
+                      className={getDesktopLinkClasses(item.href, isActive)}
                     >
                       <span>{item.label}</span>
                       {item.children && (
                         <LuChevronDown
                           className={`h-3.5 w-3.5 transition ${
                             isActive
-                              ? "text-brand"
+                              ? isHomePage && !isScrolled && item.href === "/"
+                                ? "text-white"
+                                : "text-brand"
                               : isHomePage && !isScrolled
                               ? "text-white/80"
                               : "text-slate-500"
@@ -252,8 +260,10 @@ export function SiteHeader() {
               </button>
             </div>
             <ul className="space-y-4 text-base font-medium text-slate-700">
-              {navigation.map((item) => (
-                <li key={item.href}>
+              {navigation
+                .filter((item) => !(isHomePage && item.href === "/"))
+                .map((item) => (
+                  <li key={item.href}>
                   <Link
                     href={item.href}
                     className={getMobileLinkClasses(getIsActive(item.href))}

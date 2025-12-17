@@ -166,14 +166,15 @@ export function Hero() {
         <div className="transition-all duration-700">
           <h1 className="mt-12 md:mt-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
             Türkiye ve Dünya Genelinde
-            <span className="block mt-2 text-slate-200 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+            <span className="block mt-2 text-brand drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
               Profesyonel Fuar Çözümleri
             </span>
           </h1>
           <p className="mt-6 text-base sm:text-lg md:text-xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] max-w-3xl mx-auto">
-            Ness Fuarcılık olarak 14 ülkede tamamlanan 200+ proje ile yurt içi
-            ve yurt dışında markanızı en iyi şekilde temsil ediyoruz. Stand
-            tasarımından uygulamaya, global deneyimimizle yanınızdayız.
+            Ness Fuarcılık olarak yurt içinde ve yurt dışında pek çok markaya
+            fuar, stand ve iç mimari çözümler üretiyoruz. Stand tasarımından
+            uygulamaya kadar tüm süreçleri tek elden yöneterek markanızı her
+            fuarda tutarlı ve profesyonel bir şekilde görünür kılıyoruz.
           </p>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
