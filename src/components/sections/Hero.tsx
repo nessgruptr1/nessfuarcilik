@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { LuChevronRight } from "react-icons/lu";
 import { companyInfo } from "@/data/site";
 
@@ -131,7 +132,7 @@ export function Hero() {
           />
         </video>
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/40 to-black/50" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/15 via-black/5 to-black/15" />
       </div>
 
       {/* Slider'lar şimdilik yoruma alındı */}
@@ -163,21 +164,46 @@ export function Hero() {
 
       {/* Content - Always visible, on top of video */}
       <div className="relative z-20 mx-auto max-w-5xl px-4 py-8 md:py-0 text-center">
-        <div className="transition-all duration-700">
-          <h1 className="mt-12 md:mt-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-            Türkiye ve Dünya Genelinde
-            <span className="block mt-2 text-brand drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-              Profesyonel Fuar Çözümleri
-            </span>
-          </h1>
-          <p className="mt-6 text-base sm:text-lg md:text-xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] max-w-3xl mx-auto">
-            Ness Fuarcılık olarak yurt içinde ve yurt dışında pek çok markaya
-            fuar, stand ve iç mimari çözümler üretiyoruz. Stand tasarımından
-            uygulamaya kadar tüm süreçleri tek elden yöneterek markanızı her
-            fuarda tutarlı ve profesyonel bir şekilde görünür kılıyoruz.
-          </p>
+        {/* Semi-frame around the main hero copy (top + left full, bottom 70%) */}
+        <div className="mt-8 md:mt-16 flex justify-center">
+          <div className="relative inline-block px-6 py-6 md:py-8 transition-all duration-700">
+            {/* Top dashed border */}
+            <div className="pointer-events-none absolute -top-4 left-0 hidden h-0 w-full border-t-[5px] border-dashed border-[#122738] md:block" />
+            {/* Left dashed border */}
+            <div className="pointer-events-none absolute -top-4 left-0 hidden h-[calc(100%+2rem)] w-0 border-l-[5px] border-dashed border-[#122738] md:block" />
+            {/* Bottom dashed border (shorter) */}
+            <div className="pointer-events-none absolute -bottom-4 left-0 hidden h-0 w-[70%] border-b-[5px] border-dashed border-[#122738] md:block" />
+
+            <motion.h1
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mt-0 md:mt-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
+            >
+              Türkiye ve Dünya Genelinde
+              <span className="block mt-2 text-brand drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+                Profesyonel Fuar Çözümleri
+              </span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+              className="mt-6 text-base sm:text-lg md:text-xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] max-w-3xl mx-auto"
+            >
+              Ness Fuarcılık olarak yurt içinde ve yurt dışında pek çok markaya
+              fuar, stand ve iç mimari çözümler üretiyoruz. Stand tasarımından
+              uygulamaya kadar tüm süreçleri tek elden yöneterek markanızı her
+              fuarda tutarlı ve profesyonel bir şekilde görünür kılıyoruz.
+            </motion.p>
+          </div>
         </div>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <motion.div
+          className="mt-8 flex flex-wrap justify-center gap-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+        >
           <Link
             href={companyInfo.cta.primary.href}
             className="inline-flex items-center rounded-md bg-slate-900 px-6 py-3 text-base font-bold text-white shadow-2xl transition-all hover:bg-slate-800 hover:scale-105 hover:shadow-slate-900/50 md:px-8 md:py-4 md:text-lg"
@@ -190,7 +216,7 @@ export function Hero() {
           >
             {companyInfo.cta.secondary.label}
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {/* Navigation Dots - Şimdilik yoruma alındı */}

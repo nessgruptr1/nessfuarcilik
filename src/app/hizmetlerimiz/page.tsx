@@ -14,7 +14,6 @@ import {
 } from "react-icons/lu";
 import { services } from "@/data/services";
 import { PageHero } from "@/components/ui/PageHero";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const serviceIcons: Record<
   string,
@@ -54,39 +53,6 @@ export default function ServicesOverviewPage() {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-16 space-y-12">
-        <div className="rounded-lg bg-linear-to-br from-brand to-brand-700 p-6 md:p-10 shadow-xl shadow-brand-900/30">
-          <div className="space-y-3 mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-              Uzmanlıklarımız
-            </p>
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">
-              Her ölçek için ölçeklenebilir çözümler
-            </h2>
-            <p className="text-base text-white/90">
-              Fuarda, showroomda veya mağaza içinde markanızı aynı kalite standardıyla temsil ediyoruz.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            {serviceHighlights.map((highlight) => (
-              <div
-                key={highlight.title}
-                className="rounded-md border border-white/80 bg-white/95 p-6 text-center shadow-xl shadow-brand-300/30 backdrop-blur"
-              >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-brand text-white shadow-lg shadow-brand/40">
-                  <highlight.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {highlight.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  {highlight.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service, index) => {
             const Icon = serviceIcons[service.slug] ?? LuPalette;
@@ -154,23 +120,37 @@ export default function ServicesOverviewPage() {
           })}
         </div>
 
-        <div className="rounded-md bg-linear-to-br from-brand to-brand-700 p-8 text-white">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
+        {/* Uzmanlık + Teklif birleşik CTA alanı */}
+        <div className="rounded-lg bg-linear-to-br from-brand to-brand-700 p-8 md:p-10 text-white shadow-xl shadow-brand-900/30">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-3 max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                Uzmanlıklarımız
+              </p>
+              <h2 className="text-2xl font-semibold md:text-3xl">
+                Her ölçek için ölçeklenebilir çözümler
+              </h2>
+              <p className="text-base text-white/90">
+                Fuarda, showroomda veya mağaza içinde markanızı aynı kalite
+                standardıyla temsil ediyoruz.
+              </p>
+            </div>
+
+            <div className="space-y-3 max-w-md rounded-md bg-black/10 p-4 backdrop-blur-sm md:text-right">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                 Teklif alın
               </p>
-              <h3 className="mt-2 text-2xl font-bold leading-tight">
+              <h3 className="text-xl md:text-2xl font-bold leading-snug">
                 Projeniz için en doğru hizmet kombinasyonunu birlikte
                 planlayalım.
               </h3>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand transition hover:scale-105"
+              >
+                İletişime geç
+              </Link>
             </div>
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand transition hover:scale-105"
-            >
-              İletişime geç
-            </Link>
           </div>
         </div>
       </div>

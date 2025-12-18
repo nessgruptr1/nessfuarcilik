@@ -63,14 +63,14 @@ export default function DesignsPage() {
           <button
             key={image.src}
             onClick={() => setSelectedImage(index)}
-            className="group relative aspect-4/3 w-full overflow-hidden rounded-md border border-slate-200 bg-slate-100 shadow-lg shadow-slate-900/5 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            className="group relative aspect-4/3 w-full overflow-hidden rounded-md border border-slate-200 bg-slate-900/80 shadow-lg shadow-slate-900/40 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
           >
             <Image
               src={image.src}
               alt={image.alt}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition duration-500 group-hover:scale-105"
+              className="object-contain transition duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="absolute bottom-0 left-0 right-0 p-4 text-left opacity-0 transition-opacity group-hover:opacity-100">

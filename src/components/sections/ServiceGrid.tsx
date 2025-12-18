@@ -22,7 +22,12 @@ const serviceIcons: Record<string, typeof LuPalette> = {
 
 export function ServiceGrid() {
   return (
-    <section className="space-y-10">
+    <section className="relative space-y-10">
+      {/* Dotted background */}
+      <div className="pointer-events-none absolute inset-x-0 -top-6 bottom-0 -z-10 flex justify-center">
+        <div className="h-full w-full max-w-6xl rounded-lg bg-[radial-gradient(circle,rgba(140,35,88,0.35)_1.5px,transparent_1.5px)] bg-size-[20px_20px] opacity-60" />
+      </div>
+
       <SectionHeading
         overline="Hizmetler"
         title="Uçtan uca proje yönetimi"
@@ -96,7 +101,7 @@ export function ServiceGrid() {
                 </div>
 
                 {/* Hover gradient overlay */}
-                <div className="absolute inset-0 -z-10 rounded-md bg-gradient-to-br from-brand-50/0 via-brand-50/0 to-brand-50/0 opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 -z-10 rounded-md bg-linear-to-br from-brand-50/0 via-brand-50/0 to-brand-50/0 opacity-0 transition-opacity group-hover:opacity-100" />
               </Link>
             </motion.div>
           );

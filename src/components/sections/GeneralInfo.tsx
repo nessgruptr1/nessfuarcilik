@@ -1,11 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function GeneralInfo() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
       <div className="grid gap-8 md:grid-cols-2 md:items-stretch md:gap-12">
         {/* Sol Taraf - Resim */}
-        <div className="relative aspect-square md:aspect-auto">
+        <motion.div
+          className="relative aspect-square md:aspect-auto"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <Image
             src="/images/home/ness-sade.png"
             alt="Ness Fuarcılık"
@@ -13,10 +22,16 @@ export function GeneralInfo() {
             className="object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-        </div>
+        </motion.div>
 
         {/* Sağ Taraf - İçerik */}
-        <div className="space-y-6">
+        <motion.div
+          className="space-y-6"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.75, ease: "easeOut", delay: 0.1 }}
+        >
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
             Trend Takibi ve Yenilikçi Çözümler
           </p>
@@ -28,12 +43,11 @@ export function GeneralInfo() {
             sergilemelerine, müşterilerle etkileşimde bulunmalarına ve marka
             bilinirliğini artırmalarına yardımcı olan etkili pazarlama
             araçlarıdır. Standlarınızın özenle tasarlanması, marka imajınızı
-            güçlendirecek ve hedef kitlenizle daha yakın bir bağ kurmanıza olanak
-            tanıyacaktır.
+            güçlendirecek ve hedef kitlenizle daha yakın bir bağ kurmanıza
+            olanak tanıyacaktır.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

@@ -105,23 +105,25 @@ export function StandDrawingAnimation({
       delay: 9,
       hasFill: false,
     },
+    // Sol dikey vitrin / panel
     {
-      d: "M 100 120 L 100 140 L 120 140 L 120 120 Z",
+      d: "M 120 120 L 120 180",
       stroke: "#f9a8d4",
-      fill: "#f9a8d4",
-      strokeWidth: "1.5",
-      dashArray: "100",
+      fill: "none",
+      strokeWidth: "1.8",
+      dashArray: "120",
       delay: 10,
-      hasFill: true,
+      hasFill: false,
     },
+    // Sağ dikey vitrin / panel
     {
-      d: "M 280 120 L 280 140 L 300 140 L 300 120 Z",
+      d: "M 280 120 L 280 180",
       stroke: "#f9a8d4",
-      fill: "#f9a8d4",
-      strokeWidth: "1.5",
-      dashArray: "100",
+      fill: "none",
+      strokeWidth: "1.8",
+      dashArray: "120",
       delay: 11,
-      hasFill: true,
+      hasFill: false,
     },
   ];
 
@@ -247,12 +249,12 @@ export function StandDrawingAnimation({
           );
         })}
 
-        {/* Logo/Marka Alanı (Merkez) - Circle with glow */}
+        {/* Logo/Marka Alanı (Ön cephe) - Circle with glow */}
         <g>
           <circle
             cx="200"
-            cy="140"
-            r="25"
+            cy="205"
+            r="18"
             fill="#8c2358"
             fillOpacity="0"
             style={{
@@ -263,8 +265,8 @@ export function StandDrawingAnimation({
           />
           <circle
             cx="200"
-            cy="140"
-            r="25"
+            cy="205"
+            r="18"
             fill="none"
             stroke="#8c2358"
             strokeWidth="2"

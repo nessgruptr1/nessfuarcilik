@@ -191,16 +191,16 @@ export function Design3DShowcase() {
                   >
                     <button
                       onClick={() => openLightbox(index)}
-                      className="group relative aspect-[4/3] w-full overflow-hidden rounded bg-slate-100 transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+                      className="group relative aspect-4/3 w-full overflow-hidden rounded bg-slate-900/80 transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
                     >
                       <Image
                         src={image.src}
                         alt={image.alt}
                         fill
-                        className="object-cover transition duration-500 group-hover:scale-110"
+                        className="object-contain transition duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-left opacity-0 transition-opacity group-hover:opacity-100">
                         <p className="text-sm font-semibold text-white drop-shadow-lg">
                           {image.alt}

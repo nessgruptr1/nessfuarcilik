@@ -24,7 +24,7 @@ export function PageHero({
       className={`relative overflow-hidden ${
         backgroundImage
           ? "min-h-[40vh] bg-cover bg-center"
-          : "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+          : "bg-linear-to-br from-slate-900 via-slate-800 to-slate-900"
       }`}
       style={
         backgroundImage
@@ -34,10 +34,10 @@ export function PageHero({
     >
       {/* Overlay */}
       {backgroundImage && (
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60" />
       )}
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-24 pb-16 md:pt-28 md:pb-20">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-4 md:pt-40 md:pb-8">
         {/* Breadcrumbs */}
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="mb-6 flex items-center gap-2 text-sm text-white/80">
@@ -81,4 +81,3 @@ export function PageHero({
     </section>
   );
 }
-

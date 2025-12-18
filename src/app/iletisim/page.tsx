@@ -2,13 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  LuPhone,
-  LuMail,
-  LuMapPin,
-  LuMessageCircle,
-  LuSend,
-} from "react-icons/lu";
+import { LuPhone, LuMail, LuMapPin, LuSend } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa";
 import { office } from "@/data/contact";
 import { PageHero } from "@/components/ui/PageHero";
 
@@ -38,7 +33,7 @@ export default function ContactPage() {
       title: "WhatsApp",
       value: office.whatsapp,
       href: `https://wa.me/${office.whatsapp.replace(/[^0-9]/g, "")}`,
-      icon: LuMessageCircle,
+      icon: FaWhatsapp,
       accent: "bg-green-500",
       bg: "bg-green-50",
     } as const);
@@ -97,12 +92,6 @@ export default function ContactPage() {
                     {card.value}
                   </p>
                 </div>
-                <div
-                  className={`rounded ${card.bg} p-4 text-sm text-slate-600`}
-                >
-                  Daha hızlı iletişim için {card.title.toLowerCase()} üzerinden
-                  bize ulaşabilirsiniz.
-                </div>
               </Link>
             </motion.div>
           ))}
@@ -160,10 +149,10 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-md border border-slate-200 bg-brand text-white p-8 shadow-lg"
+            className="rounded-md border border-slate-200 bg-brand text-white p-8 shadow-lg text-center"
           >
             <h3 className="text-xl font-bold">Birlikte çalışalım</h3>
-            <p className="mt-4 text-sm text-white/80">
+            <p className="mt-4 text-sm text-white/80 max-w-xl mx-auto">
               Projeniz için keşif toplantısı planlayalım. Fuar hedeflerinizi
               dinleyelim, bütçe ve teslim sürelerine uygun çözümler oluşturalım.
             </p>

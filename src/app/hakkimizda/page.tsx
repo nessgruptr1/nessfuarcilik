@@ -72,30 +72,6 @@ export default function AboutPage() {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-16">
-        {/* İstatistikler */}
-        <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            { label: "120+", value: "Tamamlanan Proje" },
-            { label: "1000+", value: "Mutlu Müşteri" },
-            { label: "12", value: "Takım Arkadaşı" },
-            { label: "8", value: "Ödül" },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.value}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-md border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:shadow-lg"
-            >
-              <p className="text-4xl font-bold text-brand">{stat.label}</p>
-              <p className="mt-2 text-base font-medium text-slate-600">
-                {stat.value}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Fotoğraf ve Metin Bölümü */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -105,7 +81,7 @@ export default function AboutPage() {
           className="mb-16 grid gap-8 md:grid-cols-2 md:items-center"
         >
           {/* Sol: Fotoğraf */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-slate-100">
+          <div className="relative aspect-4/5 overflow-hidden rounded-md bg-slate-100">
             <Image
               src="/images/hakkimizda/neslihan-fidan.jpg"
               alt="Ness Fuarcılık"
@@ -136,13 +112,45 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
+        {/* İstatistikler */}
+        <div className="mb-16 border-y border-slate-200 py-8">
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+            {[
+              { label: "120+", value: "Tamamlanan Proje" },
+              { label: "1000+", value: "Mutlu Müşteri" },
+              { label: "12", value: "Takım Arkadaşı" },
+              { label: "10", value: "Yıl Deneyim" },
+              { label: "4", value: "Ülke" },
+              { label: "8", value: "Ödül" },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.value}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className={`flex flex-col items-center justify-center py-4 text-center ${
+                  index > 0 ? "md:border-l md:border-slate-200" : ""
+                }`}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-brand">
+                  {stat.label}
+                </p>
+                <p className="mt-1 text-sm md:text-base font-medium text-slate-600">
+                  {stat.value}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         {/* Misyon */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 rounded-md border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 md:p-12"
+          className="mb-16 rounded-md border border-slate-200 bg-linear-to-br from-white to-slate-50 p-8 md:p-12"
         >
           <div className="mb-6 flex items-center gap-4">
             <div className="flex h-14 w-14 items-center justify-center rounded bg-brand text-white shadow-lg">
@@ -171,7 +179,7 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16 rounded-md border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white md:p-12"
+          className="mb-16 rounded-md border border-slate-200 bg-linear-to-br from-slate-900 to-slate-800 p-8 text-white md:p-12"
         >
           <div className="mb-6 flex items-center gap-4">
             <div className="flex h-14 w-14 items-center justify-center rounded bg-white/20 backdrop-blur-sm text-white shadow-lg">
@@ -198,7 +206,7 @@ export default function AboutPage() {
           title="Çalışma prensiplerimiz"
           description="Her projede bu değerleri ön planda tutarak ilerliyoruz."
         />
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4 ">
           {values.map((value, index) => (
             <motion.div
               key={value.title}
@@ -206,14 +214,14 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded border border-slate-200 bg-white p-6 text-center transition-all hover:-translate-y-1 hover:shadow-lg"
+              className={`flex flex-col items-center gap-3 pb-6 text-center md:items-start md:text-left md:border-l md:border-slate-200 md:pl-4 first:md:border-l-0 first:md:pl-0`}
             >
-              <div className="mb-4 flex justify-center">
+              <div className="flex justify-center md:justify-start">
                 <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand">
                   <value.icon className="h-6 w-6" />
                 </div>
               </div>
-              <h3 className="mb-2 text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900">
                 {value.title}
               </h3>
               <p className="text-sm leading-relaxed text-slate-600">
