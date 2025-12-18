@@ -177,8 +177,8 @@ export function TestimonialsStrip() {
                   ref={index === 0 ? firstCardRef : undefined}
                   className="relative flex h-full flex-col gap-4 rounded-md border border-slate-200 bg-white p-6 shadow-sm shrink-0 w-full md:w-[calc(50%-0.75rem)]"
                 >
-                  <div className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white shadow-lg">
-                    <LuQuote className="h-4 w-4" />
+                  <div className="absolute -top-4 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white shadow-lg">
+                    <LuQuote className="h-6 w-6" />
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-slate-700">
                     {testimonial.quote}
