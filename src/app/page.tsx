@@ -6,6 +6,7 @@ import { StandShowcase } from "@/components/sections/StandShowcase";
 // import { PortfolioHighlights } from "@/components/sections/PortfolioHighlights";
 import { ReferenceStrip } from "@/components/sections/ReferenceStrip";
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { TestimonialsStrip } from "@/components/sections/TestimonialsStrip";
 import { TenYearsBanner } from "@/components/sections/TenYearsBanner";
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
         <ReferenceStrip />
         <ServiceGrid />
         <StandShowcase />
-        {/* <PortfolioHighlights /> */}
+        <TestimonialsStrip />
         <ContactCTA />
       </div>
     </>
