@@ -7,7 +7,10 @@ export const office: OfficeInfo = {
   city: "Ankara",
   country: "Türkiye",
   phone: "+90 552 400 21 21",
-  email: "bilgi@nessfuarcilik.com.tr",
+  // Aktif kullanılan e-posta adresi (özellikle anasayfa ve genel iletişim için)
+  email: "nessfuarcilik@gmail.com",
+  // Kurumsal alan adlı e-posta adresi (özellikle detaylı iletişim sayfasında ikinci adres olarak)
+  secondaryEmail: "bilgi@nessfuarcilik.com.tr",
   whatsapp: "+90 552 400 21 21",
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!...", // placeholder
 };

@@ -7,6 +7,7 @@ export interface OfficeInfo {
   country: string;
   phone: string;
   email: string;
+  secondaryEmail?: string;
   whatsapp?: string;
   mapEmbedUrl?: string;
 }
