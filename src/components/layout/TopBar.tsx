@@ -34,7 +34,9 @@ export function TopBar() {
 
             <span className="hidden sm:inline text-white/40">•</span>
 
-            <p className="text-white/70">Yenimahalle / Ankara</p>
+            <p className="hidden sm:inline text-white/70">
+              Yenimahalle / Ankara
+            </p>
           </div>
 
           {/* SOSYAL MEDYA */}

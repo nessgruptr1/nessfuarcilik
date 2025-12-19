@@ -181,7 +181,7 @@ export function Hero() {
               className="mt-0 md:mt-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
             >
               Türkiye ve Dünya Genelinde
-              <span className="block mt-2 text-brand drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              <span className="block mt-2 text-brand drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
                 Profesyonel Fuar Çözümleri
               </span>
             </motion.h1>

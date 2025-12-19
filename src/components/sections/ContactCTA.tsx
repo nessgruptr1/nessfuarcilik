@@ -7,7 +7,7 @@ import { office } from "@/data/contact";
 
 export function ContactCTA() {
   return (
-    <section className="relative overflow-hidden rounded-md border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 md:p-12 text-white shadow-2xl">
+    <section className="relative overflow-hidden rounded-md border border-slate-200 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 p-4 md:p-12 text-white shadow-2xl">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-brand blur-3xl" />
@@ -15,24 +15,24 @@ export function ContactCTA() {
       </div>
 
       <div className="relative z-10">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 md:items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] md:tracking-[0.3em] text-brand-300">
                 İletişime Geçin
               </p>
-              <h3 className="mt-3 text-3xl font-bold leading-tight md:text-4xl">
+              <h3 className="mt-2 md:mt-3 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                 Bir sonraki standınızı birlikte tasarlayalım.
               </h3>
             </div>
-            <p className="text-base leading-relaxed text-slate-300">
+            <p className="text-sm md:text-base leading-relaxed text-slate-300">
               Projeleriniz için profesyonel çözümler sunuyoruz. Hemen iletişime
               geçin.
             </p>
@@ -44,52 +44,56 @@ export function ContactCTA() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-3 md:space-y-4"
           >
             {/* Phone */}
             <Link
               href={`tel:${office.phone}`}
-              className="group flex items-center gap-4 rounded bg-white/10 p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
+              className="group flex items-center gap-2 md:gap-4 rounded bg-white/10 p-3 md:p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-brand text-white">
-                <LuPhone className="h-6 w-6" />
+              <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-md bg-brand text-white">
+                <LuPhone className="h-5 w-5 md:h-6 md:w-6" />
               </div>
-              <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-400">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
                   Telefon
                 </p>
-                <p className="mt-1 text-lg font-semibold">{office.phone}</p>
+                <p className="mt-1 text-sm md:text-lg font-semibold break-all">
+                  {office.phone}
+                </p>
               </div>
-              <LuArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1" />
+              <LuArrowRight className="h-4 w-4 md:h-5 md:w-5 text-slate-400 transition-transform group-hover:translate-x-1 shrink-0 hidden sm:block" />
             </Link>
 
             {/* Email */}
             <Link
               href={`mailto:${office.email}`}
-              className="group flex items-center gap-4 rounded bg-white/10 p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
+              className="group flex items-center gap-2 md:gap-4 rounded bg-white/10 p-3 md:p-4 backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-brand-600 text-white">
-                <LuMail className="h-6 w-6" />
+              <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-md bg-brand-600 text-white">
+                <LuMail className="h-5 w-5 md:h-6 md:w-6" />
               </div>
-              <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-400">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
                   E-posta
                 </p>
-                <p className="mt-1 text-lg font-semibold">{office.email}</p>
+                <p className="mt-1 text-sm md:text-lg font-semibold break-all">
+                  {office.email}
+                </p>
               </div>
-              <LuArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1" />
+              <LuArrowRight className="h-4 w-4 md:h-5 md:w-5 text-slate-400 transition-transform group-hover:translate-x-1 shrink-0 hidden sm:block" />
             </Link>
 
             {/* Address */}
-            <div className="flex items-start gap-4 rounded bg-white/10 p-4 backdrop-blur-sm">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-slate-700 text-white">
-                <LuMapPin className="h-6 w-6" />
+            <div className="flex items-start gap-2 md:gap-4 rounded bg-white/10 p-3 md:p-4 backdrop-blur-sm">
+              <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-md bg-slate-700 text-white">
+                <LuMapPin className="h-5 w-5 md:h-6 md:w-6" />
               </div>
-              <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-400">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
                   Adres
                 </p>
-                <p className="mt-1 text-base leading-relaxed text-slate-200">
+                <p className="mt-1 text-sm md:text-base leading-relaxed text-slate-200">
                   {office.address}
                   <br />
                   {office.city} / {office.country}
