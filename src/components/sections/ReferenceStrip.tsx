@@ -28,9 +28,28 @@ export function ReferenceStrip() {
           {marqueeList.map((ref, index) => (
             <div
               key={`${ref.id}-${index}`}
-              className="whitespace-nowrap rounded-lg border border-slate-200 bg-white px-6 py-3 text-base font-bold text-slate-900 shadow-sm"
+              className="flex items-center gap-3 whitespace-nowrap"
             >
-              {ref.name}
+              <span className="flex items-center px-2 py-1 text-sm font-semibold text-slate-900 md:px-3 md:py-2 md:text-base">
+                {ref.name}
+              </span>
+              <svg
+                className="h-4 w-8 shrink-0 text-slate-300 md:h-5 md:w-10"
+                viewBox="0 0 40 8"
+                aria-hidden="true"
+              >
+                {/* İnce yatay çizgi (yuvarlatılmış uçlar) */}
+                <rect
+                  x="0"
+                  y="3"
+                  width="40"
+                  height="2"
+                  rx="1"
+                  fill="currentColor"
+                />
+                {/* Ortadaki kare blok */}
+                <rect x="18" y="1" width="4" height="6" fill="currentColor" />
+              </svg>
             </div>
           ))}
         </motion.div>
