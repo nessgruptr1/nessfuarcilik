@@ -6,17 +6,143 @@ import { IoClose } from "react-icons/io5";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const applicationSlides = [
-  { image: "/images/home/hero1.jpg", alt: "Stand Tasarımı" },
-  { image: "/images/home/hero2.jpg", alt: "Profesyonel Uygulama" },
-  { image: "/images/home/hero3.jpg", alt: "Malzeme Kiralama" },
-  { image: "/images/home/hero4.jpg", alt: "İç Mekan Tasarımı" },
-  { image: "/images/home/hero5.jpg", alt: "3D Tasarım" },
-  { image: "/images/home/hero6.jpg", alt: "Modüler Sistemler" },
-  { image: "/images/home/hero7.jpg", alt: "Mağaza & Ofis Dekorasyonu" },
-  { image: "/images/home/hero8.jpg", alt: "Fuar Danışmanlığı" },
-  { image: "/images/home/hero9.jpg", alt: "Özel Tasarımlar" },
-  { image: "/images/home/hero10.jpg", alt: "Kalite & Güven" },
-  { image: "/images/home/hero11.jpg", alt: "Marka Deneyimi" },
+  {
+    image: "/images/uygulamalarimiz/ABC LOJİSTİK.webp",
+    alt: "ABC Lojistik Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/Arfem Aleminyum.webp",
+    alt: "Arfem Alüminyum Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/Arfem Alüminyum 2020.webp",
+    alt: "Arfem Alüminyum 2020 Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/Averest candy uygulama.webp",
+    alt: "Averest Candy Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/BATTAL GRUP.webp",
+    alt: "Battal Grup Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/Bay şeker uygulama.webp",
+    alt: "Bay Şeker Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/CNBE 2018.webp",
+    alt: "CNBE 2018 Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/DEVLET DEMİR YOLLARI.webp",
+    alt: "Devlet Demir Yolları Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/DİYARBAKIR BÜYÜKŞEHİR BELEDİYESİ.webp",
+    alt: "Diyarbakır Büyükşehir Belediyesi Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/DİYARBAKIR VALİLİĞİ.webp",
+    alt: "Diyarbakır Valiliği Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/DİYARBAKIR VALİLİĞİ (2).webp",
+    alt: "Diyarbakır Valiliği Uygulama 2",
+  },
+  {
+    image: "/images/uygulamalarimiz/DİYARBAKIR VALİLİĞİ (3).webp",
+    alt: "Diyarbakır Valiliği Uygulama 3",
+  },
+  {
+    image: "/images/uygulamalarimiz/DNS GALVANİZ.webp",
+    alt: "DNS Galvaniz Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/ELMAN MEDİKAL.webp",
+    alt: "Elman Medikal Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/EMİTT ÖDÜLLÜ STANDIMIZ.webp",
+    alt: "EMITT Ödüllü Standımız",
+  },
+  {
+    image: "/images/uygulamalarimiz/EV TEKSTİLİ MAGİZA.webp",
+    alt: "Ev Tekstili Mağaza Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/Fc Fanstasy.webp",
+    alt: "FC Fantasy Standı",
+  },
+  { image: "/images/uygulamalarimiz/GİZEDOOR.webp", alt: "Gizedoor Standı" },
+  {
+    image: "/images/uygulamalarimiz/HASANPAŞAHANI.webp",
+    alt: "Hasanpaşahani Uygulaması",
+  },
+  { image: "/images/uygulamalarimiz/LİDYA AŞ.webp", alt: "Lidya AŞ Standı" },
+  {
+    image: "/images/uygulamalarimiz/MAGİZA TÜL.webp",
+    alt: "Mağiza Tül Mağaza Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/MEDUSA KAPI.webp",
+    alt: "Medusa Kapı Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/MEDİSAM MEDİKAL.webp",
+    alt: "Medisam Medikal Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/MPS PLASTİK.webp",
+    alt: "MPS Plastik Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/MTM MADENCİLİK.webp",
+    alt: "MTM Madencilik Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/MUĞLA BÜYÜK ŞEHİR BELEDİYESİ.webp",
+    alt: "Muğla Büyükşehir Belediyesi Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/Miral Metal 2020.webp",
+    alt: "Miral Metal 2020 Standı",
+  },
+  { image: "/images/uygulamalarimiz/Mps uygulama.webp", alt: "MPS Uygulaması" },
+  { image: "/images/uygulamalarimiz/OPTİKSAN.webp", alt: "Optiksan Standı" },
+  {
+    image: "/images/uygulamalarimiz/PEKER METAL.webp",
+    alt: "Peker Metal Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/RANDO ŞEKERLEME.webp",
+    alt: "Rando Şekerleme Standı",
+  },
+  { image: "/images/uygulamalarimiz/SR DÖNER.webp", alt: "SR Döner Standı" },
+  {
+    image: "/images/uygulamalarimiz/SİYA LİFE YEM.webp",
+    alt: "Siya Life Yem Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/TURK OLUKLU MUKAVVA.webp",
+    alt: "Turk Oluklu Mukavva Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/YEDİTEPEMEDİKAL.webp",
+    alt: "Yeditepe Medikal Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/electrio uygulama.webp",
+    alt: "Electrio Uygulaması",
+  },
+  {
+    image: "/images/uygulamalarimiz/İNTEGRO ROBOTİK.webp",
+    alt: "İntegro Robotik Standı",
+  },
+  {
+    image: "/images/uygulamalarimiz/İNTEGRO ROBOTİK 2.webp",
+    alt: "İntegro Robotik Uygulama 2",
+  },
 ];
 
 export default function ApplicationsPage() {

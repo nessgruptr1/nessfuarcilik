@@ -41,9 +41,9 @@ const pressItems: PressItem[] = [
   },
   {
     type: "article",
-    title: "En iyi stant unvanı Diyarbakır’ın oldu",
+    title: "En iyi stant unvanı Diyarbakır'ın oldu",
     description:
-      "Travel Turkey İzmir fuarında Diyarbakır standımız “En İyi Stant” ödülünü alarak büyük ses getirdi.",
+      'Travel Turkey İzmir fuarında Diyarbakır standımız "En İyi Stant" ödülünü alarak büyük ses getirdi.',
     source: "Tigris Haber",
     link: "https://www.tigrishaber.com/en-iyi-stant-unvani-diyarbakirin-oldu-43459h.htm",
     date: "08 Aralık 2017",
@@ -51,6 +51,8 @@ const pressItems: PressItem[] = [
       "/images/basinda-biz/tigris-8-aralik-17/Screenshot 2025-11-20 at 12.47.45.png",
       "/images/basinda-biz/tigris-8-aralik-17/Screenshot 2025-11-20 at 12.49.13.png",
       "/images/basinda-biz/tigris-8-aralik-17/Screenshot 2025-11-20 at 12.49.42.png",
+      "/images/basinda-biz/diyabakir.webp",
+      "/images/basinda-biz/odul-toreni.webp",
     ],
   },
   {
@@ -65,6 +67,26 @@ const pressItems: PressItem[] = [
       "/images/basinda-biz/tigris-11-subat-22/Screenshot 2025-11-20 at 12.50.49.png",
       "/images/basinda-biz/tigris-11-subat-22/Screenshot 2025-11-20 at 12.51.10.png",
       "/images/basinda-biz/tigris-11-subat-22/Screenshot 2025-11-20 at 12.51.29.png",
+      "/images/basinda-biz/emitt.webp",
+      "/images/basinda-biz/emitt3.webp",
+      "/images/basinda-biz/emitt4.webp",
+      "/images/basinda-biz/emtt2.webp",
+      "/images/basinda-biz/DESTiNASYON-oDuLuMuZ.webp",
+    ],
+  },
+  {
+    type: "article",
+    title: "Basında Ness Fuarcılık",
+    description:
+      "Çalışmalarımız ve başarılarımız çeşitli basın organlarında yer buldu. Profesyonel stand tasarımlarımız ve fuar organizasyonlarımız hakkında yayınlanan haberler.",
+    source: "Çeşitli Kaynaklar",
+    link: "#",
+    date: "2017 - 2024",
+    images: [
+      "/images/basinda-biz/BASINDA-BiZ.webp",
+      "/images/basinda-biz/BASINDA-BiZ-1.webp",
+      "/images/basinda-biz/BASINDA-BiZ-3.webp",
+      "/images/basinda-biz/ilkha.webp",
     ],
   },
 ];

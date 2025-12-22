@@ -20,7 +20,7 @@ const socials = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-slate-800 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <footer className="mt-16 border-t border-slate-800 bg-linear-to-b from-slate-900 to-slate-800 text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Sol: Logo ve Şirket Bilgisi */}
@@ -31,7 +31,7 @@ export function SiteFooter() {
                 alt="Ness Fuarcılık"
                 width={180}
                 height={108}
-                className="h-auto w-40 brightness-0 invert"
+                className="h-auto w-40"
               />
             </Link>
             <p className="text-sm leading-relaxed text-slate-300">

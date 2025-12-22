@@ -7,22 +7,80 @@ import { LuArrowRight } from "react-icons/lu";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StandDrawingAnimation } from "@/components/sections/StandDrawingAnimation";
 
-const designShowcaseImages = [
-  { src: "/images/home/3d/ayd-3d.jpg", alt: "AYD 3D Tasarım" },
-  { src: "/images/home/3d/aygen-3d.jpg", alt: "Aygen 3D Tasarım" },
-  { src: "/images/home/3d/bodrum-3d.jpg", alt: "Bodrum 3D Tasarım" },
-  { src: "/images/home/3d/cosmosis-3d.jpg", alt: "Cosmosis 3D Tasarım" },
-  { src: "/images/home/3d/dns-3d.jpg", alt: "DNS 3D Tasarım" },
-  { src: "/images/home/3d/EMA-3d.jpg", alt: "EMA 3D Tasarım" },
-  { src: "/images/home/3d/fethiye-3d.jpg", alt: "Fethiye 3D Tasarım" },
-  { src: "/images/home/3d/KOLT-3d.jpg", alt: "KOLT 3D Tasarım" },
-  { src: "/images/home/3d/psi.jpg", alt: "PSI 3D Tasarım" },
-  { src: "/images/home/3d/srdoner-3d.jpg", alt: "SR Döner 3D Tasarım" },
-  { src: "/images/home/3d/TCDD-3d.jpg", alt: "TCDD 3D Tasarım" },
+const designSections = [
+  {
+    title: "Ahşap Tasarımlar",
+    images: [
+      "/images/home/3d/AHSAP-TASARiMLAR/Atasam.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/AYD CAM.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/AYD_01.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/BATTAL GRUP.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/BATTAL HOLDİNG.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/CEMİLPAŞA KONAĞI.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/DESTİNASYON ÖDÜLLÜ STANDIMIZ.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/DNS TASARIM.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/Efor Kapı.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/ELMANN.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/FC FANTASY.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/İLSA.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/İNEGÖL PAPEL.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/İNTECRO ROBOTİK.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/Keçiburcu Emitt.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/LİDYA AŞ.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/MAGİZA TÜL.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/Miral Metal.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/MPS PLASTİK.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/mps tasarım.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/MTM MADEN.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/MUĞLA BÜYÜKŞEHİR BELEDİYESİ.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/RANDO.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/SİYA LİFE.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/SR DÖNER.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/TURK OLUKLU MUKAVVA.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/UĞURLU.jpg",
+      "/images/home/3d/AHSAP-TASARiMLAR/YEDİTEPE MEDİKAL.jpg",
+    ],
+  },
+  {
+    title: "Maxima Tasarımlar",
+    images: [
+      "/images/home/3d/MAXiMA-TASARiMLAR/Arda Kimya.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/AYD.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/Aygen.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/CAM DÜNYASI MAXİMA R01 R03.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/İlham Sweets.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/TAG.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/Trunch Cosmetics.jpg",
+      "/images/home/3d/MAXiMA-TASARiMLAR/Zeta Enerji.jpg",
+    ],
+  },
+  {
+    title: "Yurt Dışı Standları",
+    images: [
+      "/images/home/3d/YURT-DiSi-STANDLARi/AMSTERDAM  İNTERTRAFİC 2024 UYGULAMA .jpg",
+      "/images/home/3d/YURT-DiSi-STANDLARi/AMSTERDAM  İNTERTRAFİC UYGULAMA .jpg",
+      "/images/home/3d/YURT-DiSi-STANDLARi/BARSELONA MEDİKAL KONGRESİ.jpg",
+      "/images/home/3d/YURT-DiSi-STANDLARi/Global Connect Stuttgart 2024 UYGULAMA.jpg",
+      "/images/home/3d/YURT-DiSi-STANDLARi/Global Connect Stuttgart 2024.jpg",
+      "/images/home/3d/YURT-DiSi-STANDLARi/HANNOVER TİCARET FUARI UYGULAMA.jpg",
+    ],
+  },
 ];
 
+type SelectedImage = {
+  src: string;
+  label: string;
+} | null;
+
+const getImageLabel = (src: string): string => {
+  const fileName = src.split("/").pop() ?? "";
+  const withoutExt = fileName.replace(/\.[^/.]+$/, "");
+  const cleaned = withoutExt.replace(/[_-]+/g, " ").trim();
+  return cleaned || fileName || "Tasarım görseli";
+};
+
 export default function DesignsPage() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<SelectedImage>(null);
 
   return (
     <section className="mx-auto max-w-6xl px-6 pt-40 pb-16 space-y-10 md:pt-48">
@@ -58,31 +116,48 @@ export default function DesignsPage() {
         description="3D tasarımlarımız; stand yüksekliği, malzeme seçimi ve ışık senaryolarını en baştan doğru kurgulamak için kullanılıyor."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {designShowcaseImages.map((image, index) => (
-          <button
-            key={image.src}
-            onClick={() => setSelectedImage(index)}
-            className="group relative aspect-4/3 w-full overflow-hidden rounded-md border border-slate-200 bg-slate-900/80 shadow-lg shadow-slate-900/40 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-contain transition duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-left opacity-0 transition-opacity group-hover:opacity-100">
-              <p className="text-sm font-semibold text-white drop-shadow-lg">
-                {image.alt}
-              </p>
+      <div className="space-y-10">
+        {designSections.map((section) => (
+          <div key={section.title} className="space-y-4">
+            <h2 className="text-2xl font-bold text-slate-900">
+              {section.title}
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {section.images.map((src) => {
+                const label = getImageLabel(src);
+                return (
+                  <button
+                    key={src}
+                    onClick={() =>
+                      setSelectedImage({
+                        src,
+                        label,
+                      })
+                    }
+                    className="group relative aspect-4/3 w-full overflow-hidden rounded-md border border-slate-200 bg-slate-900/80 shadow-lg shadow-slate-900/40 transition hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+                  >
+                    <Image
+                      src={src}
+                      alt={label}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-contain transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 text-left opacity-0 transition-opacity group-hover:opacity-100">
+                      <p className="text-xs font-medium text-white/90 drop-shadow-lg">
+                        {label}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
-          </button>
+          </div>
         ))}
       </div>
 
-      {selectedImage !== null && (
+      {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={() => setSelectedImage(null)}
@@ -99,14 +174,14 @@ export default function DesignsPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={designShowcaseImages[selectedImage].src}
-              alt={designShowcaseImages[selectedImage].alt}
+              src={selectedImage.src}
+              alt={selectedImage.label}
               width={1400}
               height={1050}
               className="max-h-[90vh] rounded-md object-contain"
             />
             <p className="mt-4 text-center text-white text-sm">
-              {designShowcaseImages[selectedImage].alt}
+              {selectedImage.label}
             </p>
           </div>
         </div>
