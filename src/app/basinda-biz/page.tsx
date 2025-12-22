@@ -26,7 +26,13 @@ type ArticlePressItem = {
   images?: string[];
 };
 
-type PressItem = VideoPressItem | ArticlePressItem;
+type InstagramPressItem = {
+  type: "instagram";
+  image: string;
+  link: string;
+};
+
+type PressItem = VideoPressItem | ArticlePressItem | InstagramPressItem;
 
 const pressItems: PressItem[] = [
   {
@@ -37,6 +43,16 @@ const pressItems: PressItem[] = [
     embedUrl: "https://www.youtube.com/embed/FN2vMe6Wp1U",
     source: "Tr Ses TV (YouTube)",
     link: "https://www.youtube.com/watch?v=FN2vMe6Wp1U",
+    date: "2024",
+  },
+  {
+    type: "video",
+    title: "Ness Fuarcılık | YouTube Röportajı",
+    description:
+      "Fuar stand tasarımı ve uygulama hizmetlerimiz hakkında detaylı bilgiler.",
+    embedUrl: "https://www.youtube.com/embed/cDf3T5Ce-7U",
+    source: "YouTube",
+    link: "https://www.youtube.com/watch?v=cDf3T5Ce-7U",
     date: "2024",
   },
   {
@@ -89,10 +105,30 @@ const pressItems: PressItem[] = [
       "/images/basinda-biz/ilkha.webp",
     ],
   },
+  {
+    type: "instagram",
+    image: "/images/basinda-biz/insta-1.webp",
+    link: "https://www.instagram.com/reel/Ce4r098pDzy/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
+  },
+  {
+    type: "instagram",
+    image: "/images/basinda-biz/insta-2.webp",
+    link: "https://www.instagram.com/p/CarYKxRgXLa/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
+  },
+  {
+    type: "instagram",
+    image: "/images/basinda-biz/insta-3.webp",
+    link: "https://www.instagram.com/reel/CmUSNCXKnPz/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==",
+  },
 ];
 
 export default function PressPage() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  const regularItems = pressItems.filter((item) => item.type !== "instagram");
+  const instagramItems = pressItems.filter(
+    (item) => item.type === "instagram"
+  ) as InstagramPressItem[];
 
   return (
     <>
@@ -109,7 +145,7 @@ export default function PressPage() {
         />
 
         <div className="space-y-10">
-          {pressItems.map((item) =>
+          {regularItems.map((item) =>
             item.type === "video" ? (
               <article
                 key={item.title}
@@ -186,6 +222,36 @@ export default function PressPage() {
                 </Link>
               </article>
             )
+          )}
+
+          {/* Instagram Gönderileri */}
+          {instagramItems.length > 0 && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-slate-900">
+                Instagram&apos;dan
+              </h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {instagramItems.map((item) => (
+                  <Link
+                    key={item.image}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  >
+                    <div className="relative aspect-square w-full overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt="Instagram gönderisi"
+                        fill
+                        className="object-cover transition-transform duration-300 hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                      />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           )}
         </div>
       </div>

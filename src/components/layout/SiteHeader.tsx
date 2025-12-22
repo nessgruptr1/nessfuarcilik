@@ -73,7 +73,7 @@ export function SiteHeader() {
         ? "drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]"
         : "drop-shadow-[0_0_0_transparent]";
     const sizeClasses =
-      "text-[0.92rem] md:text-[0.96rem] tracking-[0.04em] md:tracking-[0.06em]";
+      "text-[0.8rem] md:text-[0.85rem] lg:text-[0.9rem] tracking-tight md:tracking-tight whitespace-nowrap";
 
     return `${
       isActive ? activeColor : defaultColor
@@ -120,7 +120,9 @@ export function SiteHeader() {
                   {office.email}
                 </Link>
                 <span className="hidden sm:inline opacity-40">•</span>
-                <p className="hidden sm:inline opacity-70">Yenimahalle / Ankara</p>
+                <p className="hidden sm:inline opacity-70">
+                  Yenimahalle / Ankara
+                </p>
               </div>
 
               {/* SOSYAL MEDYA */}
@@ -150,25 +152,25 @@ export function SiteHeader() {
 
         {/* Main Header */}
         <header className={`transition-all duration-300 ${headerBg}`}>
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 md:px-6">
             <Link
               href="/"
-              className="flex items-center"
+              className="flex items-center shrink-0"
               aria-label="Ness Fuarcılık"
             >
               <Image
                 src="/images/logo.png"
                 alt="Ness Fuarcılık"
-                width={230}
-                height={138}
-                sizes="(max-width: 768px) 180px, 230px"
-                className="h-[78px] w-auto md:h-[84px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]"
+                width={200}
+                height={120}
+                sizes="(max-width: 768px) 160px, 200px"
+                className="h-[70px] w-auto md:h-[76px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]"
                 priority
               />
             </Link>
-            <nav className="hidden gap-6 text-sm md:flex">
+            <nav className="hidden gap-4 text-xs md:flex md:gap-4.5 md:text-sm lg:gap-5 flex-nowrap items-center justify-end max-w-[calc(100%-180px)] md:max-w-[calc(100%-220px)]">
               {navigation
-                .filter((item) => !(isHomePage && item.href === "/"))
+                .filter((item) => item.href !== "/")
                 .map((item) => {
                   const isActive = getIsActive(item.href);
                   return (
@@ -268,7 +270,7 @@ export function SiteHeader() {
             </div>
             <ul className="space-y-4 text-base font-medium text-slate-700">
               {navigation
-                .filter((item) => !(isHomePage && item.href === "/"))
+                .filter((item) => item.href !== "/")
                 .map((item) => (
                   <li key={item.href}>
                     <Link

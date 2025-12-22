@@ -9,17 +9,20 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 // 3D görselleri dinamik olarak yükle
 const design3DImages = [
-  { src: "/images/home/3d/ayd-3d.jpg", alt: "AYD 3D Tasarım" },
-  { src: "/images/home/3d/aygen-3d.jpg", alt: "Aygen 3D Tasarım" },
-  { src: "/images/home/3d/bodrum-3d.jpg", alt: "Bodrum 3D Tasarım" },
-  { src: "/images/home/3d/cosmosis-3d.jpg", alt: "Cosmosis 3D Tasarım" },
-  { src: "/images/home/3d/dns-3d.jpg", alt: "DNS 3D Tasarım" },
-  { src: "/images/home/3d/EMA-3d.jpg", alt: "EMA 3D Tasarım" },
-  { src: "/images/home/3d/fethiye-3d.jpg", alt: "Fethiye 3D Tasarım" },
-  { src: "/images/home/3d/KOLT-3d.jpg", alt: "KOLT 3D Tasarım" },
-  { src: "/images/home/3d/psi.jpg", alt: "PSI 3D Tasarım" },
-  { src: "/images/home/3d/srdoner-3d.jpg", alt: "SR Doner 3D Tasarım" },
-  { src: "/images/home/3d/TCDD-3d.jpg", alt: "TCDD 3D Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/AYD CAM.webp", alt: "AYD CAM Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/AYD_01.webp", alt: "AYD Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/DNS TASARIM.webp", alt: "DNS Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/SR DÖNER.webp", alt: "SR Döner Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/FC FANTASY.webp", alt: "FC Fantasy Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/YEDİTEPE MEDİKAL.webp", alt: "Yeditepe Medikal Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/ELMANN.webp", alt: "Elmann Tasarım" },
+  { src: "/images/home/3d/AHSAP-TASARiMLAR/BATTAL HOLDİNG.webp", alt: "Battal Holding Tasarım" },
+  { src: "/images/home/3d/MAXiMA-TASARiMLAR/AYD.webp", alt: "AYD Maxima Tasarım" },
+  { src: "/images/home/3d/MAXiMA-TASARiMLAR/Aygen.webp", alt: "Aygen Maxima Tasarım" },
+  { src: "/images/home/3d/MAXiMA-TASARiMLAR/Trunch-Cosmetics.webp", alt: "Trunch Cosmetics Tasarım" },
+  { src: "/images/home/3d/YURT-DiSi-STANDLARi/Global Connect Stuttgart 2024.webp", alt: "Global Connect Stuttgart 2024" },
+  { src: "/images/home/3d/YURT-DiSi-STANDLARi/BARSELONA MEDİKAL KONGRESİ.webp", alt: "Barselona Medikal Kongresi" },
+  { src: "/images/home/3d/YURT-DiSi-STANDLARi/HANNOVER TİCARET FUARI UYGULAMA.webp", alt: "Hannover Ticaret Fuarı" },
 ];
 
 export function Design3DShowcase() {

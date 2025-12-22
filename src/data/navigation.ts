@@ -29,6 +29,7 @@ export const navigation: NavItem[] = [
   { label: "Tasarımlar (3D)", href: "/tasarimlar" },
   { label: "Uygulamalar", href: "/uygulamalar" },
   { label: "Referanslarımız", href: "/referanslar" },
+  { label: "Müşteri Memnuniyeti", href: "/musteri-memnuniyeti" },
   { label: "Basında Biz", href: "/basinda-biz" },
   { label: "İletişim", href: "/iletisim" },
 ];
