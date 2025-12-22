@@ -135,6 +135,13 @@ export default function ContactPage() {
                     {office.address}
                     <br />
                     {office.city} / {office.country}
+                    {office.productionAddress && (
+                      <>
+                        <br />
+                        <span className="font-semibold">İmalat: </span>
+                        {office.productionAddress}
+                      </>
+                    )}
                   </p>
                 </div>
               </div>

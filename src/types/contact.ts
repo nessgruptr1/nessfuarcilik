@@ -3,6 +3,7 @@ import type { ServiceSlug } from "./services";
 export interface OfficeInfo {
   companyName: string;
   address: string;
+  productionAddress?: string;
   city: string;
   country: string;
   phone: string;

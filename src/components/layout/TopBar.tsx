@@ -31,12 +31,6 @@ export function TopBar() {
             <Link href={`mailto:${office.email}`} className="hover:text-white">
               {office.email}
             </Link>
-
-            <span className="hidden sm:inline text-white/40">•</span>
-
-            <p className="hidden sm:inline text-white/70">
-              Yenimahalle / Ankara
-            </p>
           </div>
 
           {/* SOSYAL MEDYA */}
