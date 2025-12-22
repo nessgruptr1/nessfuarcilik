@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   LuTarget,
@@ -72,27 +71,15 @@ export default function AboutPage() {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-16">
-        {/* Fotoğraf ve Metin Bölümü */}
+        {/* Metin Bölümü (Ortalanmış) */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 grid gap-8 md:grid-cols-2 md:items-center"
+          className="mb-16"
         >
-          {/* Sol: Fotoğraf */}
-          <div className="relative aspect-4/5 overflow-hidden rounded-md bg-slate-100">
-            <Image
-              src="/images/hakkimizda/neslihan-fidan.jpg"
-              alt="Ness Fuarcılık"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Sağ: Metin */}
-          <div className="space-y-6">
+          <div className="mx-auto max-w-3xl space-y-6 text-center">
             <h2 className="text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
               İŞLETMENİZİ DİKKAT ÇEKİCİ KILIN!
             </h2>
