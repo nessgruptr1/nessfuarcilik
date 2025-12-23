@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      {/* 
       <TenYearsBanner />
+   */}
       <GeneralInfo />
       <Design3DShowcase />
       <div className="space-y-16 py-10 mx-auto max-w-6xl px-6">

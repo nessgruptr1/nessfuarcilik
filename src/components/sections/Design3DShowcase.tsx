@@ -16,7 +16,6 @@ const design3DImages = [
   { src: "/images/home/3d/AHSAP-TASARiMLAR/FC FANTASY.webp", alt: "FC Fantasy Tasarım" },
   { src: "/images/home/3d/AHSAP-TASARiMLAR/YEDİTEPE MEDİKAL.webp", alt: "Yeditepe Medikal Tasarım" },
   { src: "/images/home/3d/AHSAP-TASARiMLAR/ELMANN.webp", alt: "Elmann Tasarım" },
-  { src: "/images/home/3d/AHSAP-TASARiMLAR/BATTAL HOLDİNG.webp", alt: "Battal Holding Tasarım" },
   { src: "/images/home/3d/MAXiMA-TASARiMLAR/AYD.webp", alt: "AYD Maxima Tasarım" },
   { src: "/images/home/3d/MAXiMA-TASARiMLAR/Aygen.webp", alt: "Aygen Maxima Tasarım" },
   { src: "/images/home/3d/MAXiMA-TASARiMLAR/Trunch-Cosmetics.webp", alt: "Trunch Cosmetics Tasarım" },

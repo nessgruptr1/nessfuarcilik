@@ -75,15 +75,7 @@ const applicationSlides = [
     alt: "FC Fantasy Standı",
   },
   { image: "/images/uygulamalarimiz/GİZEDOOR.webp", alt: "Gizedoor Standı" },
-  {
-    image: "/images/uygulamalarimiz/HASANPAŞAHANI.webp",
-    alt: "Hasanpaşahani Uygulaması",
-  },
   { image: "/images/uygulamalarimiz/LİDYA AŞ.webp", alt: "Lidya AŞ Standı" },
-  {
-    image: "/images/uygulamalarimiz/MAGİZA TÜL.webp",
-    alt: "Mağiza Tül Mağaza Uygulaması",
-  },
   {
     image: "/images/uygulamalarimiz/MEDUSA KAPI.webp",
     alt: "Medusa Kapı Standı",

@@ -123,7 +123,7 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-bottom"
           aria-label="Ness Fuarcılık Hero Video"
         >
           <source
@@ -163,15 +163,12 @@ export function Hero() {
       })} */}
 
       {/* Content - Always visible, on top of video */}
+      {/* 
       <div className="relative z-20 mx-auto max-w-5xl px-4 py-8 md:py-0 text-center">
-        {/* Semi-frame around the main hero copy (top + left full, bottom 70%) */}
         <div className="mt-8 md:mt-16 flex justify-center">
           <div className="relative inline-block px-6 py-6 md:py-8 transition-all duration-700">
-            {/* Top dashed border */}
             <div className="pointer-events-none absolute -top-4 left-0 hidden h-0 w-full border-t-[5px] border-dashed border-[#122738] md:block" />
-            {/* Left dashed border */}
             <div className="pointer-events-none absolute -top-4 left-0 hidden h-[calc(100%+2rem)] w-0 border-l-[5px] border-dashed border-[#122738] md:block" />
-            {/* Bottom dashed border (shorter) */}
             <div className="pointer-events-none absolute -bottom-4 left-0 hidden h-0 w-[70%] border-b-[5px] border-dashed border-[#122738] md:block" />
 
             <motion.h1
@@ -218,6 +215,7 @@ export function Hero() {
           </Link>
         </motion.div>
       </div>
+      */}
 
       {/* Navigation Dots - Şimdilik yoruma alındı */}
       {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
@@ -235,6 +233,29 @@ export function Hero() {
           />
         ))}
       </div> */}
+
+      {/* CTA Buttons - Sol alt köşe */}
+      <div className="absolute bottom-8 left-8 z-20">
+        <motion.div
+          className="flex flex-wrap gap-4"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+        >
+          <Link
+            href={companyInfo.cta.primary.href}
+            className="inline-flex items-center rounded-md bg-slate-900 px-4 py-2 text-sm font-bold text-white shadow-2xl transition-all hover:bg-slate-800 hover:scale-105 hover:shadow-slate-900/50 md:px-5 md:py-2.5 md:text-base"
+          >
+            {companyInfo.cta.primary.label} <LuChevronRight className="ml-2" />
+          </Link>
+          <Link
+            href={companyInfo.cta.secondary.href}
+            className="inline-flex items-center rounded-md border-2 border-white bg-white/10 px-4 py-2 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white hover:text-slate-900 hover:scale-105 hover:shadow-xl md:px-5 md:py-2.5 md:text-base"
+          >
+            {companyInfo.cta.secondary.label}
+          </Link>
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -14,8 +14,6 @@ const designSections = [
       "/images/home/3d/AHSAP-TASARiMLAR/Atasam.webp",
       "/images/home/3d/AHSAP-TASARiMLAR/AYD CAM.webp",
       "/images/home/3d/AHSAP-TASARiMLAR/AYD_01.webp",
-      "/images/home/3d/AHSAP-TASARiMLAR/BATTAL GRUP.webp",
-      "/images/home/3d/AHSAP-TASARiMLAR/BATTAL HOLDİNG.webp",
       "/images/home/3d/AHSAP-TASARiMLAR/CEMİLPAŞA KONAĞI.webp",
       "/images/home/3d/AHSAP-TASARiMLAR/DESTİNASYON ÖDÜLLÜ STANDIMIZ.webp",
       "/images/home/3d/AHSAP-TASARiMLAR/DNS TASARIM.webp",
