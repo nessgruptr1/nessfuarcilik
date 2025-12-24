@@ -115,22 +115,24 @@ export function Hero() {
   // const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <section className="relative left-1/2 flex min-h-screen w-screen -translate-x-1/2 items-center justify-center overflow-hidden">
+    <section className="relative left-1/2 flex min-h-screen w-screen -translate-x-1/2 items-center justify-center overflow-hidden bg-black">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-full w-full object-cover object-bottom"
-          aria-label="Ness Fuarcılık Hero Video"
-        >
-          <source
-            src="/images/home/hero-video-optimized.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <div className="absolute top-[140px] bottom-[10px] left-0 right-0 md:top-[45px] md:bottom-[2px]">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-contain md:object-cover md:object-bottom"
+            aria-label="Ness Fuarcılık Hero Video"
+          >
+            <source
+              src="/images/home/hero-video-optimized.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-linear-to-b from-black/15 via-black/5 to-black/15" />
       </div>
@@ -216,23 +218,6 @@ export function Hero() {
         </motion.div>
       </div>
       */}
-
-      {/* Navigation Dots - Şimdilik yoruma alındı */}
-      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
-              index === currentSlide
-                ? "bg-white w-10 h-3"
-                : "bg-white/60 hover:bg-white/90 w-3 h-3"
-            }`}
-            aria-label={`Slide ${index + 1}'e git`}
-            aria-current={index === currentSlide}
-          />
-        ))}
-      </div> */}
 
       {/* CTA Buttons - Sol alt köşe */}
       <div className="absolute bottom-8 left-8 z-20">
