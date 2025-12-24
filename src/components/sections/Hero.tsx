@@ -118,7 +118,7 @@ export function Hero() {
     <section className="relative left-1/2 flex min-h-screen w-screen -translate-x-1/2 items-center justify-center overflow-hidden bg-black">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-[140px] bottom-[10px] left-0 right-0 md:top-[45px] md:bottom-[2px]">
+        <div className="absolute top-[130px] bottom-[100px] left-0 right-0 md:top-[45px] md:bottom-[2px]">
           <video
             autoPlay
             loop
@@ -220,7 +220,7 @@ export function Hero() {
       */}
 
       {/* CTA Buttons - Sol alt köşe */}
-      <div className="absolute bottom-8 left-8 z-20">
+      <div className="absolute bottom-24 left-4 md:bottom-8 md:left-8 z-20">
         <motion.div
           className="flex flex-wrap gap-4"
           initial={{ opacity: 0, x: -30 }}
