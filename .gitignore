@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large video files (use optimized versions instead)
+public/images/home/ness-web-video-yeni.mp4

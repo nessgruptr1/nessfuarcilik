@@ -20,7 +20,7 @@ export function Hero() {
             aria-label="Ness Fuarcılık Hero Video"
           >
             <source
-              src="/images/home/ness-web-video-yeni.mp4"
+              src="/images/home/ness-web-video-yeni-optimized.mp4"
               type="video/mp4"
             />
           </video>
