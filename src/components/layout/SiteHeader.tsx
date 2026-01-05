@@ -119,10 +119,6 @@ export function SiteHeader() {
                 >
                   {office.email}
                 </Link>
-                <span className="hidden sm:inline opacity-40">•</span>
-                <p className="hidden sm:inline opacity-70">
-                  Yenimahalle / Ankara
-                </p>
               </div>
 
               {/* SOSYAL MEDYA */}
